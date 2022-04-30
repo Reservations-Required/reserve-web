@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { Button } from '@mui/material';
 
 function App() {
+
+  async function fetchBuilding() {
+    const res = await fetch('http://localhost:8080/api/register/buildings/1', {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    });
+
+    const building = await res.json();
+    return building;
+  }
+
+  fetchBuilding().then(building => {
+    return building;
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Button onClick={fetchBuilding}>Click to Fetch</Button>
     </div>
   );
 }
