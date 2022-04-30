@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from '@mui/material';
 
 function App() {
-  const SERVER_URL = "http://localhost:8080/api";
+  const SERVER_URL = "http://localhost:8080";
 
   async function fetchBuilding(event) {
     event.preventDefault()
