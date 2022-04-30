@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Button } from '@mui/material';
 
 function App() {
+  const SERVER_URL = "http://localhost:8080/api";
 
-  async function fetchBuilding() {
-    const res = await fetch('http://localhost:8080/api/register/buildings/1', {
+  async function fetchBuilding(event) {
+    event.preventDefault()
+
+    const res = await fetch(`${SERVER_URL}/register/buildings/1`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -12,12 +15,8 @@ function App() {
     });
 
     const building = await res.json();
-    return building;
+    console.log(building);
   }
-
-  fetchBuilding().then(building => {
-    return building;
-  })
 
   return (
     <div className="App">
