@@ -1,6 +1,6 @@
 module.exports = () => {
 	const express = require("express");
-	const router = express.Router();s
+	const router = express.Router();
 
 	router.get("/:b_id", (req, res) => {
 		res.json({ message: `Returned info about building ${req.params.b_id}!` })
