@@ -17,7 +17,8 @@ app.listen(port, () => {
 });
 
 function createServer() {
-  const routes = require("./routes")();
+  const mainRoutes = require("./router/routes")();
+  const buildingRoutes = require("./router/buildings")();
 
   app.use(logger('dev'));
   app.use(cors());
@@ -25,7 +26,8 @@ function createServer() {
   app.use(bodyParser.json());
   app.use(express.static(path.resolve('..', 'client', 'build')));
 
-  app.use("/api", routes);
+  app.use("/api", mainRoutes);
+  app.use("/api/buildings", buildingRoutes)
 
   app.get('*', (req, res) =>
     res.sendFile(path.resolve('..', 'client', 'build', 'index.html'))
