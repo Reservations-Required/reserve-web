@@ -1,36 +1,37 @@
-module.exports = () => {
-	const express = require("express");
-	const router = express.Router();
+import express from 'express';
+import { db } from './firebase.js';
 
-	router.get("/", (req, res) => {
-		res.json({ message: "Hello from server!" });
-	});
+const router = express.Router();
 
-	// ADMIN ROUTES
-	router.post("/register/buildings", (req, res) => {
-		res.json({ message: "Created a building!" });
-	})
+router.get("/", (req, res) => {
+	res.json({ message: "Hello from server!" });
+	res.json({ message: "hi"});
+});
 
-	router.get("/register/buildings/1", (req, res) => {
-		res.json({ message: "Returned info about building 1!" })
-	})
+// ADMIN ROUTES
+router.post("/register/buildings", (req, res) => {
+	res.json({ message: "Created a building!" });
+})
 
-	router.put("/updateBuilding/buildings/1", (req, res) => {
-		res.json({ message: "Added and Updated Building" })
-	})
+router.get("/register/buildings/1", (req, res) => {
+	res.json({ message: "Returned info about building 1!" })
+})
 
-	router.put("/updateBuilding/buildings/1/room/1", (req, res) => {
-		res.json({ message: "Created New rooms!" })
-	})
+router.put("/updateBuilding/buildings/1", (req, res) => {
+	res.json({ message: "Added and Updated Building" })
+})
 
-	// USER ROUTES
-	router.post("/book/buildings", (req, res) => {
-		res.json({ message: "Book a specific room" })
-	})
+router.put("/updateBuilding/buildings/1/room/1", (req, res) => {
+	res.json({ message: "Created New rooms!" })
+})
 
-	router.get("/search/buildings/1", (req, res) => {
-		res.json({ message: "Returned info about the rooms available for the building" })
-	})
+// USER ROUTES
+router.post("/book/buildings", (req, res) => {
+	res.json({ message: "Book a specific room" })
+})
 
-	return router;
-}
+router.get("/search/buildings/1", (req, res) => {
+	res.json({ message: "Returned info about the rooms available for the building" })
+})
+
+export default router;
