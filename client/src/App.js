@@ -7,7 +7,7 @@ function App() {
   async function fetchBuilding(event) {
     event.preventDefault()
 
-    const res = await fetch(`${SERVER_URL}/register/buildings/1`, {
+    const res = await fetch(`${SERVER_URL}`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'

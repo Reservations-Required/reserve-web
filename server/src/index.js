@@ -1,16 +1,18 @@
-/** Properties */
-const serverName = "Server API"
-const port = process.env.PORT || 8080;
+/** Router */
+import mainRoutes from './router/routes.js';
+import buildingRoutes from './router/buildings.js';
 
 /** Libraries */
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
 
+/** Properties */
+const serverName = "Server API"
+const port = process.env.PORT || 8080;
+
 /** Configuration */
 const app = express();
-import mainRoutes from './router/routes.js';
-import buildingRoutes from './router/buildings.js';
 
 app.use(cors({ origin: true }));
 app.use(express.urlencoded({ extended: true }));

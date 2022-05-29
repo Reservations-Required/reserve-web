@@ -16,6 +16,8 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
+console.log(db);
+
 setLogLevel("debug");
 
 async function test () {
