@@ -2,15 +2,15 @@
   "name": "server",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.1",
-    "firebase": "^9.7.0",
+    "firebase": "^9.8.2",
+    "firebase-admin": "^10.2.0",
     "nodemon": "^2.0.16"
   },
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "nodemon --exec \"ts-node\" src/index.ts"
   },
   "eslintConfig": {
     "extends": [
@@ -29,5 +29,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12"
   }
 }

@@ -1,6 +1,6 @@
 /** Router */
-import mainRoutes from './router/routes.js';
-import buildingRoutes from './router/buildings.js';
+import mainRoutes from './router/routes';
+import buildingRoutes from './router/buildings';
 
 /** Libraries */
 import express from 'express';

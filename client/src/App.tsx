@@ -4,9 +4,7 @@ import { Button } from '@mui/material';
 function App() {
   const SERVER_URL = "http://localhost:8080/api";
 
-  async function fetchBuilding(event) {
-    event.preventDefault()
-
+  async function fetchBuilding() {
     const res = await fetch(`${SERVER_URL}`, {
       headers: {
         'Content-Type': 'application/json',
