@@ -1,19 +1,18 @@
-module.exports = () => {
-		const express = require("express");
-	const router = express.Router();
+import express from 'express';
 
-	router.get("/", (req, res) => {
-		res.json({ message: "Hello from server!" });
-	});
+const router = express.Router();
 
-	// USER ROUTES
-	router.post("/book/buildings", (req, res) => {
-		res.json({ message: "Book a specific room" })
-	});
+router.get("/", (req, res) => {
+	res.json({ message: "Hello from server!" });
+});
 
-	router.get("/search/buildings/1", (req, res) => {
-		res.json({ message: "Returned info about the rooms available for the building" })
-	});
+// USER ROUTES
+router.post("/book/buildings", (req, res) => {
+	res.json({ message: "Book a specific room" })
+});
+
+router.get("/search/buildings/1", (req, res) => {
+	res.json({ message: "Returned info about the rooms available for the building" })
+});
 	
-	return router;
-}
+export default router;
