@@ -9,14 +9,16 @@ import path from 'path';
 
 /** Configuration */
 const app = express();
-import routes from './routes.js';
+import mainRoutes from './router/routes.js';
+import buildingRoutes from './router/buildings.js';
 
 app.use(cors({ origin: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.resolve('..', 'client', 'build')));
 
-app.use("/api", routes);
+app.use("/api", mainRoutes);
+app.use("/api/buildings", buildingRoutes);
 
 app.get('*', (req, res) =>
   res.sendFile(path.resolve('..', 'client', 'build', 'index.html'))
