@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from '@mui/material';
+import Landing from './components/Landing/landing';
 
 function App() {
   const SERVER_URL = "http://localhost:8080/api";
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <Button onClick={fetchBuilding}>Click to Fetch</Button>
+      <Landing />
     </div>
   );
 }
