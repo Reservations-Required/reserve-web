@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Button } from '@mui/material';
 import Landing from './components/Landing/landing';
+import Login from './components/Login/login';
+
+
 
 function App() {
   const SERVER_URL = "http://localhost:8080/api";
@@ -18,10 +23,17 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Button onClick={fetchBuilding}>Click to Fetch</Button>
-      <Landing />
+    <div className="app">
+      <Router>
+        <Routes>
+          <Route path="/" element={< Login />} />
+        </Routes>
+      </Router>
     </div>
+    // <div className="App">
+    //   <Button onClick={fetchBuilding}>Click to Fetch</Button>
+    //   <Landing />
+    // </div>
   );
 }
 
