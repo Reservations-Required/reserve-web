@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import './App.css';
 import { Button } from '@mui/material';
 import Landing from './components/Landing/landing';
+import Account from './components/Account/account';
 
 function App() {
   const SERVER_URL = "http://localhost:8080/api";
@@ -21,6 +23,7 @@ function App() {
     <div className="App">
       <Button onClick={fetchBuilding}>Click to Fetch</Button>
       <Landing />
+      <Account name = {"Clara Lee"} email = {"cl123@ebnet.org"} />
     </div>
   );
 }
