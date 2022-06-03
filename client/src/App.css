@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
 .App {
 	background-color: #F1FAF9;
+	font-family: 'Poppins';
+	font-weight: 100;
 }

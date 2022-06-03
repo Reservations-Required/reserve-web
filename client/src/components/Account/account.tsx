@@ -1,16 +1,16 @@
-interface Props {
+import './account.css';
+
+interface AccountInfo {
 	name: string;
 	email: string;
 }
 
-const Account = (props: Props) => {
+const Account = (props: AccountInfo) => {
 	return (
-		<div>
+		<div className="Account">
 			<h2>Account</h2>
-			<p>Name</p>
-			<p>{props.name}</p>
-			<p>Email</p>
-			<p>{props.email}</p>
+			<p>Name | {props.name}</p>
+			<p>Email | {props.email}</p>
 		</div>
 	);
 };
