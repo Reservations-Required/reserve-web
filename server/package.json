@@ -8,6 +8,8 @@
     "firebase": "^9.8.2",
     "firebase-admin": "^10.2.0",
     "nodemon": "^2.0.16",
+    "react-firebase-hooks": "^5.0.3",
+    "react-router-dom": "^6.3.0",
     "ts-node": "^10.8.0"
   },
   "scripts": {
