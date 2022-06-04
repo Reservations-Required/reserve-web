@@ -7,7 +7,6 @@ import Login from './components/Login/login';
 import Dashboard from './components/Dashboard/dashboard';
 
 
-
 function App() {
   const SERVER_URL = "http://localhost:8080/api";
 
