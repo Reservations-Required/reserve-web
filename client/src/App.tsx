@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Button } from '@mui/material';
 import Landing from './components/Landing/landing';
 import Login from './components/Login/login';
+import Register from './components/Register/register';
+import Reset from './components/Reset/reset';
+import Dashboard from './components/Dashboard/dashboard';
 
 
 
@@ -26,7 +29,10 @@ function App() {
     <div className="app">
       <Router>
         <Routes>
-          <Route path="/" element={< Login />} />
+          <Route path="/login" element={< Login />} />
+          <Route path="/register" element={< Register />} />
+          <Route path="/reset" element={< Reset />} />
+          <Route path="/dashboard" element={< Dashboard />} />
         </Routes>
       </Router>
     </div>

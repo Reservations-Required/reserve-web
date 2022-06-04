@@ -104,5 +104,6 @@ export {
   signInWithEmailAndPassword, //might be unecessary
   registerWithEmailAndPassword,
   sendPasswordReset,
+  sendPasswordResetEmail, //might be unecessary
   logout,
 };
