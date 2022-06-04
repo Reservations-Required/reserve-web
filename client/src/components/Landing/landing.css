@@ -1,4 +1,16 @@
 .center {
     text-align: center;
-    background-color: rgb(5, 250, 237);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0faf9;
+}
+
+
+.buttons {
+    text-align: center;
+    color: #a8a9aa;
+    background-color: #f0faf9;
+    border: 2px solid #a8a9aa;
+    border-radius: 20px;
+    margin:5px
+
 }
