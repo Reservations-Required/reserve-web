@@ -24,7 +24,9 @@ function App() {
   }
 
   return (
-    <div className="app">
+    <div className="App">
+      <Button onClick={fetchBuilding}>Click to Fetch</Button>
+      <Landing />
       <Router>
         <Routes>
           <Route path="/login" element={< Login />} />
@@ -32,10 +34,6 @@ function App() {
         </Routes>
       </Router>
     </div>
-    // <div className="App">
-    //   <Button onClick={fetchBuilding}>Click to Fetch</Button>
-    //   <Landing />
-    // </div>
   );
 }
 
