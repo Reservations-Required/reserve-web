@@ -4,7 +4,6 @@
     background-color: #f0faf9;
 }
 
-
 .buttons {
     text-align: center;
     color: #a8a9aa;
@@ -12,5 +11,16 @@
     border: 2px solid #a8a9aa;
     border-radius: 20px;
     margin:5px
+}
 
+.buttons:hover {
+    background-color: #76d0cc;
+    color: white;
+}
+
+.search{
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    
 }
