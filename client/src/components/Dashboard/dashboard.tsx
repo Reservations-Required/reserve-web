@@ -9,6 +9,10 @@ function Dashboard() {
   const [name, setName] = useState("");
   const navigate = useNavigate();
   const fetchUserName = async () => {
+    /*
+    Error: the first time a user logs in using google, it can't get the user's name.
+    Only in subsequent logins can it retreive and display the name.
+    */
     try {
       const q = query(collection(db, "users"), where("uid", "==", user?.uid));
       const doc = await getDocs(q);
