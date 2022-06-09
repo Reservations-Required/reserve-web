@@ -4,7 +4,7 @@ import { auth, signInWithGoogle } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./login.css";
 
-function Login() {
+const Login = () => {
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
   useEffect(() => {

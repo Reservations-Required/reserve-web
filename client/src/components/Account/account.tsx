@@ -2,7 +2,7 @@ import './account.css';
 
 interface AccountInfo {
 	name: string;
-	email: string;
+	email: string | undefined | null;
 }
 
 const Account = (props: AccountInfo) => {

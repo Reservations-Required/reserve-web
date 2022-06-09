@@ -2,8 +2,8 @@ import './home.css';
 import React from 'react';
 import { Button } from '@mui/material';
 import Landing from '../Landing/landing';
-import Account from '../Account/account';
-
+import RoomCard from '../RoomCard/roomcard';
+import Dashboard from '../Dashboard/dashboard';
 
 const Home = () => {
   const SERVER_URL = "http://localhost:8080/api";
@@ -24,7 +24,7 @@ const Home = () => {
     <div className="Home">
       <Button onClick={fetchBuilding}>Click to Fetch</Button>
       <Landing />
-      <Account name = {"Clara Lee"} email = {"cl123@ebnet.org"} />
+      <RoomCard building='Morrison' room={218} people={['5','7']} favorite={false}/>
     </div>
   );
 }
