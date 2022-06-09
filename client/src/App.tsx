@@ -2,6 +2,7 @@ import './App.css';
 import { Button } from '@mui/material';
 import Landing from './components/Landing/landing';
 import Account from './components/Account/account';
+import RoomCard from './components/RoomCard/roomcard';
 
 function App() {
   const SERVER_URL = "http://localhost:8080/api";
@@ -23,6 +24,7 @@ function App() {
       <Button onClick={fetchBuilding}>Click to Fetch</Button>
       <Landing />
       <Account name = {"Clara Lee"} email = {"cl123@ebnet.org"} />
+      <RoomCard building='Morrison' room={218} people={['5','7']} favorite={false}/>
     </div>
   );
 }
