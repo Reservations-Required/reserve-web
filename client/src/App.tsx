@@ -1,38 +1,31 @@
-import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import './App.css';
 import { Button } from '@mui/material';
+
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './components/Home/home';
+import Reservation from './components/Reservation/reservation';
+import Room from './components/Room/room';
+import Admin from './components/Admin/admin';
 import Landing from './components/Landing/landing';
 import Login from './components/Login/login';
 import Dashboard from './components/Dashboard/dashboard';
 
-
 function App() {
-  const SERVER_URL = "http://localhost:8080/api";
-
-  async function fetchBuilding() {
-    const res = await fetch(`${SERVER_URL}`, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    });
-
-    const building = await res.json();
-    console.log(building);
-  }
-
   return (
     <div className="App">
-      <Button onClick={fetchBuilding}>Click to Fetch</Button>
-      <Landing />
-      <Router>
+      <BrowserRouter>
         <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='reservation' element={<Reservation />} />
+          <Route path='room' element={<Room />} />
+          <Route path='admin' element={<Admin />} />
           <Route path="/login" element={< Login />} />
           <Route path="/dashboard" element={< Dashboard />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
+
   );
 }
 
