@@ -10,21 +10,17 @@ import Admin from './components/Admin/admin';
 
 function App() {
   return (
-    <div className = "App">
+    <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          {/* <Route path='reservation' element={<Reservation />} />
+          <Route path='reservation' element={<Reservation />} />
           <Route path='room' element={<Room />} />
-          <Route path='admin' element={<Admin />} /> */}
+          <Route path='admin' element={<Admin />} />
         </Routes>
       </BrowserRouter>
     </div>
 
-    
-    // <BrowserRouter>
-    //   <Home/>
-    // </BrowserRouter>
   );
 }
 
