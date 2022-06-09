@@ -1,29 +1,30 @@
 import './App.css';
 import { Button } from '@mui/material';
-import Landing from './components/Landing/landing';
-import Account from './components/Account/account';
+
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './components/Home/home';
+import Reservation from './components/Reservation/reservation';
+import Room from './components/Room/room';
+import Admin from './components/Admin/admin';
 
 function App() {
-  const SERVER_URL = "http://localhost:8080/api";
-
-  async function fetchBuilding() {
-    const res = await fetch(`${SERVER_URL}`, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    });
-
-    const building = await res.json();
-    console.log(building);
-  }
-
   return (
-    <div className="App">
-      <Button onClick={fetchBuilding}>Click to Fetch</Button>
-      <Landing />
-      <Account name = {"Clara Lee"} email = {"cl123@ebnet.org"} />
+    <div className = "App">
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          {/* <Route path='reservation' element={<Reservation />} />
+          <Route path='room' element={<Room />} />
+          <Route path='admin' element={<Admin />} /> */}
+        </Routes>
+      </BrowserRouter>
     </div>
+
+    
+    // <BrowserRouter>
+    //   <Home/>
+    // </BrowserRouter>
   );
 }
 
