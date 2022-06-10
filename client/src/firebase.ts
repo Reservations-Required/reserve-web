@@ -42,7 +42,7 @@ const signInWithGoogle = async () => {
     const q = query(collection(db, "users"), where("uid", "==", user.uid));
     const docs = await getDocs(q);
     // error if non-cornell domain
-    if (!user.email.endsWith("@cornell.edu")) {
+    if (!user.email!.endsWith("@cornell.edu")) {
       throw "Please sign in with your Cornell email.";
     }
     // otherwise, add the new user to database
@@ -54,7 +54,7 @@ const signInWithGoogle = async () => {
         email: user.email,
       });
     }
-  } catch (err) {
+  } catch (err: any) {
     console.error(err);
     alert(err.message);
   }
@@ -62,7 +62,6 @@ const signInWithGoogle = async () => {
 
 const logout = () => {
   signOut(auth);
-  window.location = './login';
 };
 
 export {
