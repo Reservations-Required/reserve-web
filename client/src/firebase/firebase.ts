@@ -1,3 +1,4 @@
+import firebaseConfig from './firebase.json';
 import { initializeApp } from "firebase/app";
 import {
   GoogleAuthProvider,
@@ -14,27 +15,18 @@ import {
   addDoc,
 } from "firebase/firestore";
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDnEJi2Pbk6xPvq6PEeaoPD67ye_Ro_GZc",
-  authDomain: "reservations-required.firebaseapp.com",
-  projectId: "reservations-required",
-  storageBucket: "reservations-required.appspot.com",
-  messagingSenderId: "140008611320",
-  appId: "1:140008611320:web:d5dc1a41f3f99388fa8a0d",
-  measurementId: "G-3HPWK4MV7H"
-};
-
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
 
 const googleProvider = new GoogleAuthProvider();
+
 // only allow emails from Cornell domain
 googleProvider.setCustomParameters({
   'hd': 'cornell.edu'
 });
-const signInWithGoogle = async () => {
+
+export const signInWithGoogle = async () => {
   try {
     // check is user is in database
     const res = await signInWithPopup(auth, googleProvider);
@@ -60,13 +52,6 @@ const signInWithGoogle = async () => {
   }
 };
 
-const logout = () => {
+export const logout = () => {
   signOut(auth);
-};
-
-export {
-  auth,
-  db,
-  signInWithGoogle,
-  logout,
 };

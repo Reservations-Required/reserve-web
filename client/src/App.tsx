@@ -5,7 +5,7 @@ import Reservation from './components/Reservation/reservation';
 import Room from './components/Room/room';
 import Admin from './components/Admin/admin';
 import Login from './components/Login/login';
-import Dashboard from './components/Dashboard/dashboard';
+import Profile from './components/Profile/profile';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           <Route path='/room' element={<Room />} />
           <Route path='/admin' element={<Admin />} />
           <Route path="/login" element={< Login />} />
-          <Route path="/dashboard" element={< Dashboard />} />
+          <Route path="/profile" element={< Profile />} />
         </Routes>
       </BrowserRouter>
     </div>
