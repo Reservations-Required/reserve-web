@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './roomcard.css';
 
 interface RoomCardProps {
@@ -17,4 +16,4 @@ const RoomCard = (props: RoomCardProps) => {
     );
 };
 
-export default RoomCard
+export default RoomCard;

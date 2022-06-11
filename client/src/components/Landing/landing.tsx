@@ -1,5 +1,5 @@
+import './landing.css';
 import { Button } from '@mui/material';
-import './landing.css'
 
 const Landing = () => {
     const buildings: string[] = ["Morrison 218", "Morrison 220", "Morrison 222", "Morrison 224"];
