@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
 	const buildingsCollection = db.collection('Buildings');
 	const buildingsSnapshot = await buildingsCollection.get();
 	const allBuildings = buildingsSnapshot.docs;
-	const buildings = [];
+	const buildings: FirebaseFirestore.DocumentData[] = [];
 	for (const doc of allBuildings) {
 		const building = doc.data();
 		buildings.push(building);

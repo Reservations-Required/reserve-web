@@ -1,9 +1,7 @@
 import './home.css';
-import React from 'react';
 import { Button } from '@mui/material';
 import Landing from '../Landing/landing';
 import RoomCard from '../RoomCard/roomcard';
-import Dashboard from '../Dashboard/dashboard';
 
 const Home = () => {
   const SERVER_URL = "http://localhost:8080/api";
