@@ -20,7 +20,8 @@ router.get("/", async (req, res) => {
 });
 
 /***
- * Returns information about a specific building, by building id
+ * Returns information about a specific building, given its 
+ * building ID
  */
 router.get("/:b_id", async (req, res) => {
 	const buildingID = req.params.b_id;
@@ -28,6 +29,7 @@ router.get("/:b_id", async (req, res) => {
 	const ref = buildingsCollection.doc(buildingID);
 	const doc = await ref.get();
 	const data = doc.data();
+  
 	res.send(data);
 });
 
