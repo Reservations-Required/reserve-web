@@ -12,10 +12,11 @@ import {
   getDocs,
   collection,
   where,
-  addDoc,
 } from "firebase/firestore";
 
+const SERVER_URL = "http://localhost:8080/api";
 const app = initializeApp(firebaseConfig);
+
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 
@@ -27,6 +28,22 @@ googleProvider.setCustomParameters({
 });
 
 export const signInWithGoogle = async () => {
+  async function addUser(id: string, name: string, email: string) {
+    await fetch(`${SERVER_URL}/users`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify({
+        uid: id,
+        name: name,
+        authProvider: "google",
+        email: email
+      })
+    });
+  }
+
   try {
     // check is user is in database
     const res = await signInWithPopup(auth, googleProvider);
@@ -39,12 +56,7 @@ export const signInWithGoogle = async () => {
     }
     // otherwise, add the new user to database
     if (docs.docs.length === 0) {
-      await addDoc(collection(db, "users"), {
-        uid: user.uid,
-        name: user.displayName,
-        authProvider: "google",
-        email: user.email,
-      });
+      addUser(user.uid, user.displayName!, user.email!);
     }
   } catch (err: any) {
     console.error(err);

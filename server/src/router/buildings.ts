@@ -4,7 +4,7 @@ import { db } from '../firebase';
 const router = express.Router();
 
 /***
- * Returns information about each building
+ * Returns information about all buildings
  */
 router.get("/", async (req, res) => {
 	const buildingsCollection = db.collection('buildings');
@@ -29,7 +29,7 @@ router.get("/:b_id", async (req, res) => {
 	const ref = buildingsCollection.doc(buildingID);
 	const doc = await ref.get();
 	const data = doc.data();
-	
+  
 	res.send(data);
 });
 
