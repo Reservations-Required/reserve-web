@@ -4,10 +4,10 @@ import { db } from '../firebase';
 const router = express.Router();
 
 /***
- * Returns information about each building
+ * Returns information about all buildings
  */
 router.get("/", async (req, res) => {
-	const buildingsCollection = db.collection('Buildings');
+	const buildingsCollection = db.collection('buildings');
 	const buildingsSnapshot = await buildingsCollection.get();
 	const allBuildings = buildingsSnapshot.docs;
 	const buildings: FirebaseFirestore.DocumentData[] = [];
@@ -19,12 +19,16 @@ router.get("/", async (req, res) => {
 	res.send(buildings);
 });
 
+/***
+ * Returns information about a specific building, by building id
+ */
 router.get("/:b_id", async (req, res) => {
 	const buildingID = req.params.b_id;
-	const buildingsCollection = db.collection('Buildings');
+	const buildingsCollection = db.collection('buildings');
 	const ref = buildingsCollection.doc(buildingID);
 	const doc = await ref.get();
-	res.send(doc);
+	const data = doc.data();
+	res.send(data);
 });
 
 router.put("/:b_id/buildings/1", (req, res) => {
