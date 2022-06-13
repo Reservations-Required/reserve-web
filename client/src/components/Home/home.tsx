@@ -3,7 +3,7 @@ import {useState} from 'react';
 import { Button } from '@mui/material';
 import Landing from '../Landing/landing';
 import RoomCard from '../RoomCard/roomcard';
-import {useState} from 'react';
+
 
 const Home = () => {
   const SERVER_URL = "http://localhost:8080/api";
