@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import React, { useState } from 'react';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
+const BAYMAX = require('../../assets/baymax1.gif');
+
 const NavBar = () => {
     const [logged, setlogged] = useState(false);
 
@@ -20,7 +22,7 @@ const NavBar = () => {
         <div className="NavBar">
             <div className='left'>
                 <img className="pic"
-                    src={require('./baymax1.gif')}
+                    src={BAYMAX}
                 />
                 <p>Morrison Reservations</p>
             </div>
