@@ -6,11 +6,13 @@ import Room from './components/Room/room';
 import Admin from './components/Admin/admin';
 import Login from './components/Login/login';
 import Profile from './components/Profile/profile';
+import NavBar from './components/NavBar/navbar';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/reservation' element={<Reservation />} />

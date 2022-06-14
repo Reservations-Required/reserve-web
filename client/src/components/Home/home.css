@@ -1,4 +1,22 @@
 .Home {
 	background-color: #F1FAF9;
 	font-weight: 100;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.b {
+	display: flex;
+	width: max-content;
+}
+
+.landing {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.card {
+	display: flex;
 }

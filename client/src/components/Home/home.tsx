@@ -1,5 +1,5 @@
 import './home.css';
-import {useState} from 'react';
+import { useState } from 'react';
 import { Button } from '@mui/material';
 import Landing from '../Landing/landing';
 import RoomCard from '../RoomCard/roomcard';
@@ -24,9 +24,16 @@ const Home = () => {
 
   return (
     <div className="Home">
-      <Button onClick={() => {fetchBuilding(2)}}>Click to Fetch</Button>
-      <Landing />
-      <RoomCard building='Morrison' room={218} people={['5','7']} favorite={false}/>
+      <Button className="b" onClick={() => { fetchBuilding(2) }}>Click to Fetch</Button>
+
+      <div className="landing">
+        <Landing />
+      </div>
+
+      <div className="card">
+        <RoomCard building='Morrison' room={218} people={['5', '7']} favorite={false} />
+      </div>
+
       <div>
         {JSON.stringify(test)}
       </div>
