@@ -28,7 +28,7 @@ googleProvider.setCustomParameters({
 });
 
 export const signInWithGoogle = async () => {
-  async function addUser(id: string, name: string, email: string) {
+  async function addUser(id: string, name: string, email: string, status: string) {
     await fetch(`${SERVER_URL}/users`, {
       headers: {
         'Content-Type': 'application/json',
@@ -36,10 +36,10 @@ export const signInWithGoogle = async () => {
       },
       method: "POST",
       body: JSON.stringify({
-        uid: id,
+        u_id: id,
         name: name,
-        authProvider: "google",
-        email: email
+        email: email,
+        status: status,
       })
     });
   }
@@ -48,7 +48,7 @@ export const signInWithGoogle = async () => {
     // check is user is in database
     const res = await signInWithPopup(auth, googleProvider);
     const user = res.user;
-    const q = query(collection(db, "users"), where("uid", "==", user.uid));
+    const q = query(collection(db, "users"), where("u_id", "==", user.uid));
     const docs = await getDocs(q);
     // error if non-cornell domain
     if (!user.email!.endsWith("@cornell.edu")) {
@@ -56,7 +56,7 @@ export const signInWithGoogle = async () => {
     }
     // otherwise, add the new user to database
     if (docs.docs.length === 0) {
-      addUser(user.uid, user.displayName!, user.email!);
+      addUser(user.uid, user.displayName!, user.email!, "student");
     }
   } catch (err: any) {
     console.error(err);

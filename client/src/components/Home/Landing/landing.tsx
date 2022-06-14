@@ -1,5 +1,5 @@
 import './landing.css';
-import { StyledButton } from '../../styles/button.style';
+import { StyledButton } from '../../../styles/button.style';
 
 
 const Landing = () => {
