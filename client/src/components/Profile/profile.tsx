@@ -37,12 +37,13 @@ const Profile = () => {
 
   return (
     <div className="dashboard">
-      <div className="dashboard__container">
-        <StyledButton onClick={logout}>Logout</StyledButton>
-      </div>
       <div className="account">
         <Account name={name} email={user?.email} />
       </div>
+      <div className="button">
+        <StyledButton onClick={logout}>Logout</StyledButton>
+      </div>
+      
 
     </div>
   );

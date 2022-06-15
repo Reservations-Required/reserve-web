@@ -2,14 +2,18 @@
   height: 100vh;
   width: 100vw;
   display: flex;
+  position: relative;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .account {
-  position: absolute;
-  width: 570px;
-  height: 261px;
-  left: 778px;
-  top: 203px;
+  display: flex;
+	align-items: center;
+
+  padding-top: 50px;
+}
+
+.button{
+  display: flex;
 }
