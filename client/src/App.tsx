@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/reservation' element={<Reservation />} />
-          <Route path='/room' element={<Room />} />
+          <Route path='/room' element={<Room building='Morrison' room='218E' image='temp string for img' location='north campus' capacity={[4,6]} amenities={[]}/>} />
           <Route path='/admin' element={<Admin />} />
           <Route path="/login" element={< Login />} />
           <Route path="/dashboard" element={< Dashboard />} />
