@@ -11,10 +11,24 @@ export type UserType = {
 
 export type ReservationType = {
 	u_id: string;
-	date: string;
-	time_start: string;
-	time_end: string;
+	r_id: string;
+	date: Date;
+	time_start: Time;
+	time_end: Time;
 }
+
+export type Date = {
+	month: number;
+	day: number;
+	year: number;
+}
+
+/* military timing system so we dont have to AM/PM */
+export type Time = {
+	hour: number;
+	minute: number;
+}
+ 
 
 export type RoomType = {
 	r_id: number;

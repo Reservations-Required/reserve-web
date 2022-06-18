@@ -10,6 +10,7 @@
     "firebase": "^9.8.2",
     "nodemon": "^2.0.16",
     "react": "^18.1.0",
+    "react-calendar": "^3.7.0",
     "react-dom": "^18.1.0",
     "react-firebase-hooks": "^5.0.3",
     "react-router-dom": "^6.3.0",
@@ -38,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-calendar": "^3.5.1",
     "@types/react-dom": "^18.0.5"
   }
 }

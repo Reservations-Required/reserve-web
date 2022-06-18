@@ -8,7 +8,7 @@ import Login from './components/Login/login';
 import Profile from './components/Profile/profile';
 import NavBar from './components/NavBar/navbar';
 
-function App() {
+const dropDown = () => {
   return (
     <div className="App">
       <BrowserRouter>
@@ -27,4 +27,4 @@ function App() {
   );
 }
 
-export default App;
+export default dropDown;
