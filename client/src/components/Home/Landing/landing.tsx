@@ -1,12 +1,13 @@
-import { Button } from '@mui/material';
-import './landing.css'
+import './landing.css';
+import { StyledButton } from '../../../styles/button.style';
+
 
 const Landing = () => {
     const buildings: string[] = ["Morrison 218", "Morrison 220", "Morrison 222", "Morrison 224"];
-    const buildingsMap: React.ReactNode[] = buildings.map((e) => { return <Button className="buttons"> {e} </Button> })
+    const buildingsMap: React.ReactNode[] = buildings.map((e) => { return <StyledButton> {e} </StyledButton> });
+
     return (
         <div>
-            <p> Reservation Required </p>
             <div className="center">
                 <h1> Suggestions </h1>
                 {buildingsMap}

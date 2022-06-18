@@ -1,0 +1,37 @@
+.NavBar {
+    background-color: #F1FAF9;
+    overflow: hidden;
+}
+
+.pic {
+    padding: 7px 14px;
+    height: 60px;
+    float: left;
+}
+.left p{
+    margin-top: 1%;
+    font-size: 30px;
+    font-weight: bold;
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.NavBar li {
+    list-style: none;
+    font-size: 24px;
+    display: inline-block;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.home, .signin {
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    font-weight: 550;
+} 

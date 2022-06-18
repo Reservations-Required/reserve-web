@@ -1,0 +1,19 @@
+.dashboard {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account {
+  display: flex;
+	align-items: center;
+
+  padding-top: 50px;
+}
+
+.button{
+  display: flex;
+}

@@ -1,32 +1,13 @@
-import { initializeApp } from 'firebase/app';
-import { getFirestore, setLogLevel, collection, getDocs } from 'firebase/firestore';
+import admin from 'firebase-admin';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDnEJi2Pbk6xPvq6PEeaoPD67ye_Ro_GZc",
-  authDomain: "reservations-required.firebaseapp.com",
-  projectId: "reservations-required",
-  storageBucket: "reservations-required.appspot.com",
-  messagingSenderId: "140008611320",
-  appId: "1:140008611320:web:d5dc1a41f3f99388fa8a0d",
-  measurementId: "G-3HPWK4MV7H"
-};
+var serviceAccount = require("../serviceAccount.json");
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
 
-const db = getFirestore(app);
+const db = admin.firestore();
+const auth = admin.auth();
 
-console.log(db);
-
-setLogLevel("debug");
-
-async function test () {
-  const snapshot = await getDocs(collection(db, "Buildings"));
-  snapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data()}`);
-  });
-}
-
-test()
-
-export { db };
+export { db, auth }

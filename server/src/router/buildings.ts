@@ -1,10 +1,36 @@
 import express from 'express';
-import { db } from '../firebase.js';
+import { db } from '../firebase';
 
 const router = express.Router();
 
-router.get("/:b_id", (req, res) => {
-	res.json({ message: `Returned info about building ${req.params.b_id}!` })
+/***
+ * Returns information about all buildings
+ */
+router.get("/", async (req, res) => {
+	const buildingsCollection = db.collection('buildings');
+	const buildingsSnapshot = await buildingsCollection.get();
+	const allBuildings = buildingsSnapshot.docs;
+	const buildings: FirebaseFirestore.DocumentData[] = [];
+	for (const doc of allBuildings) {
+		const building = doc.data();
+		buildings.push(building);
+	}
+
+	res.send(buildings);
+});
+
+/***
+ * Returns information about a specific building, given its 
+ * building ID
+ */
+router.get("/:b_id", async (req, res) => {
+	const buildingID = req.params.b_id;
+	const buildingsCollection = db.collection('buildings');
+	const ref = buildingsCollection.doc(buildingID);
+	const doc = await ref.get();
+	const data = doc.data();
+  
+	res.send(data);
 });
 
 router.put("/:b_id/buildings/1", (req, res) => {
