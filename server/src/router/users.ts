@@ -23,4 +23,18 @@ router.post("/", async (req, res) => {
 	res.send(newUser);
 });
 
+/***
+ * Returns information about a user specified by their user ID
+ */
+router.get("/:u_id", async (req, res) => {
+	const userID = req.params.u_id;
+	const usersCollection = db.collection('users');
+	const ref = usersCollection.doc(userID);
+	const doc = await ref.get();
+	const data = doc.data();
+  
+	res.send(data);
+});
+
 export default router;
+
