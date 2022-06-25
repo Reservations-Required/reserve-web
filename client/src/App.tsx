@@ -8,6 +8,8 @@ import Login from './components/Login/login';
 import Profile from './components/Profile/profile';
 import NavBar from './components/NavBar/navbar';
 
+import Summary from './components/Summary/summary';
+
 function App() { 
   return (
     <div className="App">
@@ -20,6 +22,8 @@ function App() {
           <Route path='/admin' element={<Admin />} />
           <Route path="/login" element={< Login />} />
           <Route path="/profile" element={< Profile />} />
+
+          <Route path = "/summary" element = {<Summary building = "Morrison" room = "218" />} />
         </Routes>
       </BrowserRouter>
     </div>

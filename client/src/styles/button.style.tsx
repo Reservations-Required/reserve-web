@@ -12,3 +12,9 @@ export const StyledButton = styled(Button)({
 		color: 'white'
 	}
 });
+
+export const StyledButton2 = styled(Button)({
+	color: '#FFFFFF',
+	backgroundColor: '#FFC38B',
+	borderRadius: '25px',
+});
