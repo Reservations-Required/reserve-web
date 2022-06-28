@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Button } from '@mui/material';
 import Landing from './Landing/landing';
 import RoomCard from '../RoomCard/roomcard';
+import RoomGrid from '../RoomGrid/roomgrid';
 
 const Home = () => {
   const SERVER_URL = "http://localhost:8080/api";
@@ -30,7 +31,8 @@ const Home = () => {
       </div>
 
       <div className="card">
-        <RoomCard building='Morrison' room={218} people={['5', '7']} favorite={false} />
+        <RoomGrid />
+        {/* <RoomCard building='Morrison' room={218} people={['5', '7']} favorite={false} /> */}
       </div>
 
       <div>

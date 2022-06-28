@@ -1,0 +1,9 @@
+.RoomGrid {
+    direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    position: relative;
+    display: flex;
+
+}
