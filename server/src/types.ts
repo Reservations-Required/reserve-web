@@ -36,5 +36,5 @@ export type BuildingType = {
 	location: string;
 	name: string;
 	short: string;
-	rooms: RoomIDType[];
+	rooms: string[];
 }
