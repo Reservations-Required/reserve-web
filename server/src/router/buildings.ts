@@ -1,5 +1,6 @@
 import express from 'express';
 import { db } from '../firebase';
+import { BuildingType } from '../types';
 
 const router = express.Router();
 
@@ -29,16 +30,38 @@ router.get("/:b_id", async (req, res) => {
 	const ref = buildingsCollection.doc(buildingID);
 	const doc = await ref.get();
 	const data = doc.data();
-  
+
 	res.send(data);
 });
 
-router.put("/:b_id/buildings/1", (req, res) => {
-	res.json({ message: "Added and Updated Building" })
+/***
+ *  Removes a building by its ID
+ */
+router.delete("/:b_id", async (req, res) => {
+	const buildingID = req.params.b_id;
+	const buildingsCollection = db.collection('buildings');
+	const ref = buildingsCollection.doc(buildingID);
+	ref.delete();
+	res.send(`Deleted building ${buildingID}`);
 });
 
-router.put("/updateBuilding/buildings/:b_id/room/:r_id", (req, res) => {
-	res.json({ message: "Created New rooms!" })
+
+/***
+ *  Adds a new building with the next available ID
+ */
+router.post("/", async (req, res) => {
+	const buildingsCollection = await db.collection('buildings');
+	const ref = buildingsCollection.doc(req.body.b_id.toString());
+	const building: BuildingType = {
+		b_id: req.body.b_id,
+		description: req.body.description,
+		location: req.body.location,
+		name: req.body.name,
+		short: req.body.short,
+		rooms: req.body.rooms,
+	};
+	await ref.set(building);
+	res.send(building);
 });
 
 export default router;
