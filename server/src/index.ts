@@ -2,6 +2,7 @@
 import mainRoutes from './router/routes';
 import buildingRoutes from './router/buildings';
 import userRoutes from './router/users';
+import roomRoutes from './router/rooms';
 
 /** Libraries */
 import express from 'express';
@@ -23,6 +24,7 @@ app.use(express.static(path.resolve('..', 'client', 'build')));
 app.use("/api", mainRoutes);
 app.use("/api/buildings", buildingRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/rooms", roomRoutes);
 
 app.get('*', (req, res) =>
   res.sendFile(path.resolve('..', 'client', 'build', 'index.html'))
