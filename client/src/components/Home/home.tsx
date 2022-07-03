@@ -1,6 +1,7 @@
 import './home.css';
 import RoomGrid from '../RoomGrid/roomgrid';
 import { H2 } from '../../styles/fonts.style';
+import BuildingSearch from '../BuildingSearch/BuildingSearch';
 
 const Home = () => {
 
@@ -11,6 +12,7 @@ const Home = () => {
       <div className="card">
         <RoomGrid />
       </div>
+      <BuildingSearch />
     </div>
   );
 }
