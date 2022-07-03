@@ -43,6 +43,7 @@ async function getURL(imageRef: string) {
         room_number: req.body.room_number,
         description: req.body.description,
         amenities: req.body.amenities,
+		image: "",
         reservations: []
     }
 

@@ -4,8 +4,8 @@ export type UserType = {
 	authProvider: string;
 	email: string;
 	my_reservations: ReservationType[];
-	my_favorites: [];
-	// options for status: student, staff, admin, restricted
+	my_favorites: RoomIDType[];
+	// options for status: student, admin, restricted
 	status: string;
 }
 
@@ -20,6 +20,7 @@ export type RoomType = {
 	b_id: number;
 	room_number: string;
 	description: string;
+	image: string;
 	amenities: string[];
 	reservations: ReservationType[];
 }
@@ -34,6 +35,7 @@ export type BuildingType = {
 	description: string;
 	location: string;
 	name: string;
+	image: string;
 	short: string;
 	rooms: string[];
 }

@@ -1,5 +1,6 @@
 import './roomcard.css';
 import { useEffect } from 'react';
+import { P2, P7 } from '../../styles/fonts.style';
 
 interface RoomCardProps {
     building: string
@@ -25,9 +26,9 @@ const RoomCard = (props: RoomCardProps) => {
     
     return (
         <div className='RoomCard'>
-            <h3>{props.building} {props.room}</h3>
-            <p>{props.capacity[0]}-{props.capacity[1]} people</p>
-            <img id={`roomImage`} width = "200" src = ""/>
+            <img id={`roomImage`} width = "100" src = ""/>
+            <P2>{props.building} {props.room}</P2>
+            <P7>{props.capacity[0]}-{props.capacity[1]} people</P7>
         </div>
     );
 };

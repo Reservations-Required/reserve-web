@@ -59,6 +59,7 @@ router.post("/", async (req, res) => {
 		name: req.body.name,
 		short: req.body.short,
 		rooms: req.body.rooms,
+		image: ""
 	};
 	await ref.set(building);
 	res.send(building);

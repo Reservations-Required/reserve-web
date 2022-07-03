@@ -1,4 +1,5 @@
 import './room.css';
+import Summary from '../Summary/summary';
 
 interface RoomProps {
   building: string
@@ -17,6 +18,7 @@ const Room = (props: RoomProps) => {
       <p>Location: {props.location}</p>
       <p>Capacity: {props.capacity[0]}-{props.capacity[1]} People</p>
       <p>Amenities: {ToString(props.amenities)}</p>
+      <Summary building = "Morrison" room = "218" />
     </div>
   );
 }
