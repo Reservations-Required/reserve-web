@@ -36,5 +36,16 @@ router.get("/:u_id", async (req, res) => {
 	res.send(data);
 });
 
+/***
+ * Removes a user by their ID
+ */
+router.delete("/:u_id", async (req, res) => {
+	const userID = req.params.u_id;
+	const usersCollection = db.collection('users');
+	const ref = usersCollection.doc(userID);
+	ref.delete();
+	res.send(`Deleted user ${userID}`);
+});
+
 export default router;
 
