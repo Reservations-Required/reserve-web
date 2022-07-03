@@ -1,8 +1,18 @@
 import express from 'express';
-import { db } from '../firebase';
+import { db, storage } from '../firebase';
 import { RoomType } from '../types';
 
 const router = express.Router();
+
+async function getURL(imageRef: string) {
+	const [url] = await storage.bucket("reservations-required.appspot.com").file(imageRef).getSignedUrl({
+		version: "v4",
+		action: "read",
+		expires: Date.now() + 15 * 60 * 1000
+	})
+
+	return url;
+}
 
 /***
  * Returns information about a room (i hope it does too LOL)
@@ -13,6 +23,10 @@ const router = express.Router();
 	const ref = roomCollection.doc(roomID);
 	const doc = await ref.get();
 	const roomsInfo = doc.data();
+	
+	const roomsURL = await getURL(roomsInfo!["image"]);
+	roomsInfo!["imageURL"] = roomsURL;
+	
 	res.send(roomsInfo);
 });
 

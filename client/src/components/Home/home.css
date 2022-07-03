@@ -8,3 +8,12 @@
 .card {
 	display: flex;
 }
+
+.title {
+	color:#65C6AF;
+	text-align: center;
+}
+
+.title2 {
+	color: #FFC38B;
+}

@@ -13,12 +13,14 @@ import {
   collection,
   where,
 } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const SERVER_URL = "http://localhost:8080/api";
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+export const storage = getStorage(app);
 
 const googleProvider = new GoogleAuthProvider();
 
