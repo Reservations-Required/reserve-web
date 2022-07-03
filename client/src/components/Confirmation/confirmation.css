@@ -1,3 +1,10 @@
 .email {
     font-weight: bold;
 }
+
+.account {
+    display: flex;
+    align-items: center;
+
+    padding-top: 50px;
+}
