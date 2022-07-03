@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./profile.css";
 import { auth, db, logout } from "../../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
-import Account from "./Account/account";
+import Account from "../Confirmation/Account/account";
 import { StyledButton } from "../../styles/button.style";
 
 const Profile = () => {
