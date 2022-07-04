@@ -11,8 +11,9 @@ export type UserType = {
 
 export type ReservationType = {
 	u_id: string;
-	start: Date;
-	end: Date;
+	r_id: number;
+	start: string;
+	end: string;
 }
 
 export type RoomType = {
@@ -23,6 +24,10 @@ export type RoomType = {
 	image: string;
 	amenities: string[];
 	reservations: ReservationType[];
+	accessible: string;
+	capacity: number;
+	food: boolean;
+	locked: boolean;
 }
 
 export type RoomIDType = {

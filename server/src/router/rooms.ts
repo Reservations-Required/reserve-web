@@ -15,6 +15,22 @@ async function getURL(imageRef: string) {
 }
 
 /***
+ * Returns information about all rooms
+ */
+ router.get("/", async (req, res) => {
+	const roomsCollection = db.collection('rooms');
+	const roomsSnapshot = await roomsCollection.get();
+	const allRooms = roomsSnapshot.docs;
+	const rooms: FirebaseFirestore.DocumentData[] = [];
+	for (const doc of allRooms) {
+		const room = doc.data();
+		rooms.push(room);
+	}
+
+	res.send(rooms);
+});
+
+/***
  * Returns information about a room (i hope it does too LOL)
  */
  router.get("/:r_id", async (req, res) => {
@@ -44,10 +60,15 @@ async function getURL(imageRef: string) {
         description: req.body.description,
         amenities: req.body.amenities,
 		image: "",
-        reservations: []
+        reservations: [],
+		accessible: req.body.accessible,
+		locked: req.body.locked,
+		food: req.body.food,
+		capacity: req.body.capacity
     }
 
 	await ref.set(room);
+	await ref.collection('reservations').add({});
 	res.send(room);
 });
 
