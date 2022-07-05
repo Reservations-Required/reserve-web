@@ -1,4 +1,125 @@
 .Reservation {
+	background-color: #ffffff;
+	font-weight: 100;
+}
+
+.searchBar {
+	box-sizing: border-box;
+
+	position: absolute;
+	width: 1105px;
+	height: 102px;
+	left: calc(50% - 1105px/2);
+	top: 264px;
+
+	background: #FFFFFF;
+	border: 3px solid #C2E6E3;
+	border-radius: 48px;
+}
+
+.selectionPanel {
+	position: absolute;
+	width: 806px;
+	height: 459px;
+	left: calc(50% - 806px / 2);
+	top: 405px;
+
+	background: #FFFFFF;
+	border-radius: 49px;
+}
+
+.selectionPanel-title {
+	position: absolute;
+	width: 224px;
+	height: 30px;
+	left: 291px;
+	top: 42px;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 30px;
+	/* identical to box height */
+
+	color: #000000;
+}
+
+.selectionPanel-calendar {
+	position: absolute;
+	width: 260px;
+	height: 233px;
+	left: 110px;
+	top: 113px;
+
+}
+
+.selectionPanel-from {
+	position: absolute;
+	width: 192px;
+	height: 87px;
+	left: 465px;
+	top: 110px;
+}
+
+.selectionPanel-to {
+	position: absolute;
+	width: 192px;
+	height: 87px;
+	left: 465px;
+	top: 236px;
+}
+
+.selectionPanel-titles {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 52px;
+	height: 30px;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 30px;
+	/* identical to box height */
+
+
+	color: #000000;
+}
+
+.selectionPanel-times {
+	box-sizing: border-box;
+
+	position: absolute;
+	width: 192px;
+	height: 47px;
+	left: 0px;
+	bottom: 0px;
+
+	border: 2px solid #C2E5E3;
+	border-radius: 18px;
+}
+
+.colon {
+	position: absolute;
+	width: 21px;
+	height: 24px;
+	left: 66px;
+	top: 7px;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 30px;
+
+	color: #000000;
+}
+
+.dropdown {
+    width: 192px;
+    height: 200px;
+
+    background-color: blue;
+} .Reservation {
 	background-color: #18d9c3;
 	font-weight: 100;
 }

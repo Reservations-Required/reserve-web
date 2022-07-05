@@ -64,7 +64,7 @@ router.get("/:u_id/favorites", async (req, res) => {
 });
 
 /***
- * Updates user's favorites. Must ensure req.body is of type RoomIDType
+ * Updates user's favorites
  */
 router.post("/:u_id/favorites", async (req, res) => {
 	const userID = req.params.u_id;
@@ -78,7 +78,7 @@ router.post("/:u_id/favorites", async (req, res) => {
 });
 
 /***
- * Updates user's resrvations. Must ensure req.body is of type ReservationType
+ * Updates user's reservations
  */
  router.post("/:u_id/reservations", async (req, res) => {
 	const userID = req.params.u_id;
@@ -103,8 +103,23 @@ router.delete("/:u_id", async (req, res) => {
 	const userID = req.params.u_id;
 	const ref = users.doc(userID);
 	ref.delete();
+
 	res.send(`Deleted user ${userID}`);
 });
+
+/***
+ * Change user status
+ * Options are: student, admin, restricted
+ */
+router.post("/:u_id", async (req, res) => {
+	const userID = req.params.u_id;
+	const ref = users.doc(userID);
+	ref.update({
+		"status": req.body.status
+	});
+
+	res.send(`Updated ${userID} to ${req.body.status}`);
+})
 
 export default router;
 
