@@ -1,4 +1,3 @@
-import { storage } from "./firebase";
 import { Time } from "./types";
 
 /**
@@ -23,14 +22,4 @@ export function checkTimeSlot(start: Time, end: Time) {
         return ("Reservations must end after the starting time");
     }
     return ("Check");
-}
-
-export async function getURL(imageRef: string) {
-	const [url] = await storage.bucket("reservations-required.appspot.com").file(imageRef).getSignedUrl({
-		version: "v4",
-		action: "read",
-		expires: Date.now() + 15 * 60 * 1000
-	})
-
-	return url;
 }

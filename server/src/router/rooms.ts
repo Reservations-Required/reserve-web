@@ -1,12 +1,21 @@
 import express from 'express';
 import fetch from 'node-fetch';
-import { db } from '../firebase';
-import { getURL } from '../functions';
+import { db, storage } from '../firebase';
 import { RoomType } from '../types';
 
 const router = express.Router();
 const roomsCollection = db.collection('rooms');
 const SERVER_URL = "http://localhost:8080/api";
+
+async function getURL(imageRef: string) {
+	const [url] = await storage.bucket("reservations-required.appspot.com").file(imageRef).getSignedUrl({
+		version: "v4",
+		action: "read",
+		expires: Date.now() + 15 * 60 * 1000
+	})
+
+	return url;
+}
 
 /***
  * Returns information about all rooms

@@ -7,6 +7,21 @@ const router = express.Router();
 const users = db.collection('users');
 
 /***
+ * Get all users
+ */
+router.get("/", async (req, res) => {
+	const usersSnapshot = await users.get();
+	const allUsers = usersSnapshot.docs;
+	const userData: FirebaseFirestore.DocumentData[] = [];
+	for (const doc of allUsers) {
+		const user = doc.data();
+		userData.push(user);
+	}
+
+	res.send(userData);
+});
+
+/***
  * Adds a new user to the database
  */
 router.post("/", async (req, res) => {
@@ -72,7 +87,7 @@ router.post("/:u_id/favorites", async (req, res) => {
 	const body: RoomIDType = req.body;
 	const unionFavorites = await ref.update({
 		my_favorites: FieldValue.arrayUnion(body)
-	})
+	});
 
 	res.send(unionFavorites)
 });

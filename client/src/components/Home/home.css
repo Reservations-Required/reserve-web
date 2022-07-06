@@ -17,3 +17,17 @@
 .title2 {
 	color: #FFC38B;
 }
+
+.searchBar {
+	box-sizing: border-box;
+
+	position: absolute;
+	width: 1105px;
+	height: 102px;
+	left: calc(50% - 1105px/2);
+	top: 264px;
+
+	background: #FFFFFF;
+	border: 3px solid #65C6AF;
+	border-radius: 48px;
+}

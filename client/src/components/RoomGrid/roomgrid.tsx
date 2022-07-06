@@ -1,27 +1,30 @@
 import './roomgrid.css';
 import { Grid } from '@mui/material';
 import RoomCard from '../RoomCard/roomcard';
+import { useEffect, useState } from 'react';
 
 const RoomGrid = () => {
+    const [data, setData] = useState([]);
+
+    async function retrieveRooms() {
+        const res = await fetch(`http://localhost:8080/api/rooms`);
+        const data = await res.json();
+        setData(data);
+    }
+
+    // useEffect(() => {
+    //     retrieveRooms();
+    // });
+
+
     return (
         <div className='RoomGrid'>
             <Grid container columns={9}>
-                {/* {cards.map((card) => <RoomCard {...card}/>)} */}
-                <Grid item xs={3}>
-                    <RoomCard building='Morrison' room={218} capacity={['5', '7']} favorite={false}></RoomCard>
-                </Grid>
-                <Grid item xs={3}>
-                    <RoomCard building='Morrison' room={219} capacity={['5', '7']} favorite={false}></RoomCard>
-                </Grid>
-                <Grid item xs={3}>
-                    <RoomCard building='Morrison' room={216} capacity={['5', '7']} favorite={false}></RoomCard>
-                </Grid>
-                <Grid item xs={3}>
-                    <RoomCard building='Morrison' room={217} capacity={['5', '7']} favorite={false}></RoomCard>
-                </Grid>
-                <Grid item xs={3}>
-                    <RoomCard building='Morrison' room={215} capacity={['5', '7']} favorite={false}></RoomCard>
-                </Grid>
+                {data.map((item) => (
+                    <Grid item xs = {3}>
+                        <RoomCard favorite = {false} data = {item}/>
+                    </Grid>
+                ))}
             </Grid>
         </div>
     );
