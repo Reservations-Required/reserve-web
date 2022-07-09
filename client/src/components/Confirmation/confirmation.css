@@ -2,9 +2,12 @@
     font-weight: bold;
 }
 
-.account {
-    display: flex;
-    align-items: center;
+.reservation_summary {
+    border: 1px solid #C4C4C4;
+    border-radius: 33px; 
+}
 
-    padding-top: 50px;
+.account {
+    border: 1px solid #C4C4C4;
+    border-radius: 33px;
 }

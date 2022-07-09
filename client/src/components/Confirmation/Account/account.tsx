@@ -1,5 +1,6 @@
 import './account.css';
 import { Grid } from '@mui/material';
+import {P1, P3, P6} from '../../../styles/fonts.style';
 
 interface AccountInfo {
 	name: string;
@@ -9,19 +10,19 @@ interface AccountInfo {
 const Account = (props: AccountInfo) => {
 	return (
 		<div className="Account">
-			<h2>Account</h2>
+			<P1>Personal Information</P1>
 			<Grid container rowSpacing={1} columnSpacing={{ xs: 1 }} columns = {2}>
 				<Grid item xs={1}>
-					<h3>Name</h3>
+					<P6 className = "heading">Name</P6>
 				</Grid>
 				<Grid item xs={1}>
-					<p>{props.name}</p>
+					<P3>{props.name}</P3>
 				</Grid>
 				<Grid item xs={1}>
-					<h3>Email</h3>
+					<P6 className = "heading">Email</P6>
 				</Grid>
 				<Grid item xs={1}>
-					<p>{props.email}</p>
+					<P3>{props.email}</P3>
 				</Grid>
 			</Grid>
 		</div>
