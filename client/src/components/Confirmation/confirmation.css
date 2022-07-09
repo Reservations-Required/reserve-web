@@ -1,0 +1,13 @@
+.email {
+    font-weight: bold;
+}
+
+.reservation_summary {
+    border: 1px solid #C4C4C4;
+    border-radius: 33px; 
+}
+
+.account {
+    border: 1px solid #C4C4C4;
+    border-radius: 33px;
+}
