@@ -26,6 +26,8 @@ export type RoomType = {
 	capacity: number;
 	food: boolean;
 	locked: boolean;
+	open: Time | null;
+	closed: Time | null;
 }
 
 export type RoomIDType = {

@@ -62,7 +62,9 @@ router.post("/", async (req, res) => {
 		accessible: req.body.accessible,
 		locked: req.body.locked,
 		food: req.body.food,
-		capacity: req.body.capacity
+		capacity: req.body.capacity,
+		open: req.body.open,
+		closed: req.body.closed
 	}
 
 	await ref.set(room);

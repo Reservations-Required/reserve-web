@@ -7,7 +7,7 @@ interface RoomCardProps {
     favorite: boolean
 }
 
-const SERVER_URL = "http://localhost:8080/api";
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const RoomCard = (props: RoomCardProps) => {
     const [building, setBuilding] = useState("");

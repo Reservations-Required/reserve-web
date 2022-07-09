@@ -2,8 +2,9 @@ import './admin.css';
 import { useState } from 'react';
 import { auth } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { H2 } from '../../styles/fonts.style';
 
-const SERVER_URL = "http://localhost:8080/api"
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Admin = () => {
   const [user, loading] = useAuthState(auth);
@@ -27,16 +28,8 @@ const Admin = () => {
   }
   return (
     <div className="Admin">
-      <p>This is the admin page</p>
-      <h1>User Management System</h1>
-      <h2>Query user information</h2>
-      <h2>Change user status</h2>
-      <h1>Create or Edit the Database</h1>
-      <h2>Create a building/room</h2>
-      <h2>Update building/room</h2>
-      <h2>Remove a reservation</h2>
-      <h1>Reservation Log System</h1>
-      <h2>Return information about reservations in a table</h2>
+      <H2>Reservation Log</H2>
+      <H2>Admin Services</H2>
     </div>
   );
 }
