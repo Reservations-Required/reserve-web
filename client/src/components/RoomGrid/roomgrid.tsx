@@ -14,9 +14,9 @@ const RoomGrid = () => {
         setData(data);
     }
 
-    // useEffect(() => {
-    //     retrieveRooms();
-    // });
+    useEffect(() => {
+        retrieveRooms();
+    }, []);
 
     return (
         <div className='RoomGrid'>

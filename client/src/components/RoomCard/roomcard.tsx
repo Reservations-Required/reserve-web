@@ -39,3 +39,4 @@ const RoomCard = (props: RoomCardProps) => {
 };
 
 export default RoomCard;
+

@@ -25,7 +25,7 @@ const Confirmation = (props: SummaryProps) => {
 
     useEffect(() => {
         if (user != null) fetchUserName(user, setName);
-    });
+    }, [user]);
 
     if (!success) {
         return (
