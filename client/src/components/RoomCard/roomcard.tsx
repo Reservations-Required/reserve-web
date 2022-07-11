@@ -1,6 +1,7 @@
 import './roomcard.css';
 import { useEffect, useState } from 'react';
 import { P2, P7 } from '../../styles/fonts.style';
+import { Navigate } from 'react-router-dom';
 
 interface RoomCardProps {
     data: any
@@ -31,6 +32,8 @@ const RoomCard = (props: RoomCardProps) => {
     
     return (
         <div className='RoomCard'>
+            {/* <button onClick = {() => {<Navigate to="/room" />}}>Click Me to go to room</button> */}
+            <a href = "/room">Test</a>
             <img id={`roomImage`} width="100" src="" />
             <P2>{building} {props.data.room_number}</P2>
             <P7>{props.data.capacity} people</P7>
