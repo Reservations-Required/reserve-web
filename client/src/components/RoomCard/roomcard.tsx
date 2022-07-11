@@ -1,6 +1,7 @@
 import './roomcard.css';
 import { useEffect, useState } from 'react';
 import { P2, P7 } from '../../styles/fonts.style';
+import { useNavigate } from 'react-router-dom';
 
 interface RoomCardProps {
     data: any
@@ -10,6 +11,8 @@ interface RoomCardProps {
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const RoomCard = (props: RoomCardProps) => {
+    const navigate = useNavigate();
+
     const [building, setBuilding] = useState("");
 
     async function getImage() {
@@ -30,7 +33,7 @@ const RoomCard = (props: RoomCardProps) => {
     getBuilding();
     
     return (
-        <div className='RoomCard'>
+        <div className='RoomCard' onClick = {() => {navigate(`/room/${props.data.r_id}`)}}>
             <img id={`roomImage`} width="100" src="" />
             <P2>{building} {props.data.room_number}</P2>
             <P7>{props.data.capacity} people</P7>

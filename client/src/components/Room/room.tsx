@@ -1,5 +1,6 @@
 import './room.css';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import {H2, P1, P3, P4, P6, P7} from "../../styles/fonts.style"
 import Summary from '../Summary/summary';
@@ -16,14 +17,12 @@ const amenitiesDict = new Map([
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
-interface RoomProps {
-  room_id: number
-}
+const Room = () => {
+  const { r_id } = useParams();
 
-const Room = (props: RoomProps) => {
   const [roomData, setRoomData] = useState<any>({});
   async function getRoom(){
-    const res = await fetch(`${SERVER_URL}/rooms/${props.room_id}`)
+    const res = await fetch(`${SERVER_URL}/rooms/${r_id}`)
     const roomData = await res.json()
     setRoomData(roomData);
   }
@@ -56,9 +55,9 @@ const Room = (props: RoomProps) => {
           <P6>{roomData['accessible']}</P6>
         </div>
         <P1>Amenities & Features</P1>
-        <P6>{roomData['amenities'].map((e:string) => (
+        {/* <P6>{roomData['amenities'].map((e:string) => (
           <li><img src={amenitiesDict.get(e)} /> {e}</li>
-        ))}</P6>
+        ))}</P6> */}
         <P1>Reservation Policies</P1>
         <P7>Toni Morrison study rooms may only be booked for 2 hours a day per person.</P7>
         <P7>RESERVATIONS HAVE PRIORITY. If you are using a space and do not have a valid reservation,<br></br>you must leave when asked by a group that has a valid reservation.</P7>

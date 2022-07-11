@@ -32,7 +32,7 @@ function App() {
           <Route element={<WithNav />} >
             <Route path='/' element={<Home />} />
             <Route path='/reservation' element={<Reservation />} />
-            <Route path='/room' element={<Room room_id={1} />} />
+            <Route path='/room/:r_id' element={<Room />} />
             <Route path='/admin' element={<Admin />} />
             <Route path="/profile" element={< Profile />} />
             <Route path="/confirmation" element={<Confirmation room = {"Toni Morrison 218"} date = {"Wed, Apr 20, 2022"} time = {"12:00 PM - 2:00 PM"} purpose = {"Finals Study Session"}/>}/>
