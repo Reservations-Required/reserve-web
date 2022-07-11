@@ -2,8 +2,8 @@ import './room.css';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import {H2, P1, P3, P4, P6, P7} from "../../styles/fonts.style"
-import Summary from '../Summary/summary';
+import { H2, P1, P3, P4, P6, P7 } from "../../styles/fonts.style"
+import Summary from './Summary/summary';
 import tv from "../../assets/TV.svg"
 import whiteboard from "../../assets/Whiteboard.svg"
 import poweroutlet from "../../assets/Power Outlet.svg"
@@ -13,7 +13,7 @@ const amenitiesDict = new Map([
   ["TV", tv],
   ["Whiteboard", whiteboard],
   ["Power Outlet", poweroutlet],
-  ["Wheelchair Accessible", wheelchairaccessible] ])
+  ["Wheelchair Accessible", wheelchairaccessible]])
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
@@ -21,20 +21,20 @@ const Room = () => {
   const { r_id } = useParams();
 
   const [roomData, setRoomData] = useState<any>({});
-  async function getRoom(){
+  async function getRoom() {
     const res = await fetch(`${SERVER_URL}/rooms/${r_id}`)
     const roomData = await res.json()
     setRoomData(roomData);
   }
-  useEffect(() => {getRoom()}, [])
+  useEffect(() => { getRoom() }, [])
 
   const [buildingData, setBuildingData] = useState<any>({});
-  async function getBuilding(){
+  async function getBuilding() {
     const res = await fetch(`${SERVER_URL}/buildings/${roomData['b_id']}`)
     const buildingData = await res.json()
     setBuildingData(buildingData)
   }
-  useEffect(() => {getBuilding()})
+  useEffect(() => { getBuilding() })
 
   return (
     <div className="room">
@@ -55,14 +55,14 @@ const Room = () => {
           <P6>{roomData['accessible']}</P6>
         </div>
         <P1>Amenities & Features</P1>
-        {/* <P6>{roomData['amenities'].map((e:string) => (
+        <P6>{roomData['amenities']?.map((e: string) => (
           <li><img src={amenitiesDict.get(e)} /> {e}</li>
-        ))}</P6> */}
+        ))}</P6>
         <P1>Reservation Policies</P1>
         <P7>Toni Morrison study rooms may only be booked for 2 hours a day per person.</P7>
         <P7>RESERVATIONS HAVE PRIORITY. If you are using a space and do not have a valid reservation,<br></br>you must leave when asked by a group that has a valid reservation.</P7>
       </div>
-      <Summary building = "Morrison" room = "218" />
+      <Summary building="Morrison" room="218" />
     </div>
   );
 }
@@ -72,7 +72,7 @@ const Room = () => {
  * @param boolean value
  * @returns string of either "yes" or "no"
  */
-function booleanString(bool: boolean){
+function booleanString(bool: boolean) {
   return bool ? "Yes" : "No"
 }
 

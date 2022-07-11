@@ -1,17 +1,20 @@
 import './home.css';
 import RoomGrid from '../RoomGrid/roomgrid';
+import SearchBar from '../SearchBar/searchbar';
 import { H2 } from '../../styles/fonts.style';
 
 const Home = () => {
 
   return (
     <div>
-      <H2 className="title">Some think reserving rooms is an addiction. </H2>
-      <H2 className="title">For us, it's a <span className="title2">lifestyle</span>.</H2>
-      <div className='searchBar'></div>
+      <H2 className="title">Reservations Made <span className = "title2">Easy</span>. </H2>
+      <div className='searchBar'>
+        <SearchBar />
+      </div>
       <div className="grid">
         <RoomGrid />
       </div>
+      <a href = "/admin">Admin</a>
     </div>
   );
 }

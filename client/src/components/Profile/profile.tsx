@@ -23,6 +23,7 @@ const Profile = () => {
       <H2>Hi, {name.split(" ")[0]}!</H2>
       <P5>Here are all your reservations and favorited rooms.</P5>
       <P1>Favorited Rooms</P1>
+      <P1>Reservations</P1>
       <div className="button">
         <StyledButton onClick={logout}>Logout</StyledButton>
       </div>

@@ -1,9 +1,10 @@
 import './summary.css';
 
 import { TextField, Grid } from '@mui/material';
-import DateIcon from '../../assets/date.svg';
-import { H3, P1, P3, P6, P7 } from '../../styles/fonts.style';
-import { StyledButton2 } from '../../styles/button.style';
+import DateIcon from '../../../assets/date.svg';
+import { H3, P1, P3, P6, P7 } from '../../../styles/fonts.style';
+import { StyledButton2 } from '../../../styles/button.style';
+import { useState } from 'react';
 
 interface SummaryProps {
 	building: string;
