@@ -18,6 +18,7 @@ export type ReservationType = {
 
 export type RoomType = {
 	b_id: number;
+	r_id: number;
 	room_number: string;
 	description: string;
 	image: string;

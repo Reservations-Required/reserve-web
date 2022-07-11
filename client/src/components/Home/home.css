@@ -5,12 +5,9 @@
 	display: flex;
 	flex-direction: column;
 }
-.card {
-	display: flex;
-}
 
 .title {
-	color:#65C6AF;
+	color: #65C6AF;
 	text-align: center;
 }
 
@@ -28,4 +25,8 @@
 	background: #FFFFFF;
 	border: 3px solid #65C6AF;
 	border-radius: 48px;
+}
+
+.grid {
+	align-items: center;
 }
