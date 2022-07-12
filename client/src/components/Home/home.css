@@ -15,18 +15,6 @@
 	color: #65C6AF;
 }
 
-.searchBar {
-	box-sizing: border-box;
-
-	position: absolute;
-	width: 1105px;
-	height: 102px;
-
-	background: #FFFFFF;
-	border: 3px solid #65C6AF;
-	border-radius: 48px;
-}
-
 .grid {
 	align-items: center;
 }

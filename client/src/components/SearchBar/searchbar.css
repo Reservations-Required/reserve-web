@@ -1,5 +1,185 @@
 .SearchBar {
+    /* Auto layout */
+
     display: flex;
+    flex-direction: row;
     align-items: center;
+    padding: 0px 16px 0px 0px;
+    gap: 248px;
+
+    width: 1150px;
+    height: 86px;
+
+    background: #FFFFFF;
+    /* Morrison Green */
+
+    border: 3px solid #65C6AF;
+    border-radius: 56px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.content {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+
+    width: 710px;
+    height: 86px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+.location {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 96px 16px 32px;
+    gap: 20px;
+
+    width: 344px;
+    height: 86px;
+
+    border-radius: 48px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.location:hover {
+    background-color: #F3F3F3;
+}
+
+.location-icon {
+    width: 30px;
+    height: 37.5px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.location-content {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+
+    width: 166px;
+    height: 54px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.date-time {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 296px 16px 32px;
+    gap: 20px;
+
+    width: 518px;
+    height: 86px;
+
+    border-radius: 48px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.date-time:hover {
+    background-color: #F3F3F3;
+}
+
+.date-time-icon {
+    /* date icon */
+
+
+    width: 37px;
+    height: 37px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.date-time-content {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+
+    width: 133px;
+    height: 54px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.search {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 32px;
+    gap: 14px;
+
+    width: 176px;
+    height: 59px;
+
+    /* Morrison Green */
+
+    background: #65C6AF;
+    border-radius: 48px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }

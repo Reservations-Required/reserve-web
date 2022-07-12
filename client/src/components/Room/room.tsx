@@ -62,7 +62,7 @@ const Room = () => {
         <P7>Toni Morrison study rooms may only be booked for 2 hours a day per person.</P7>
         <P7>RESERVATIONS HAVE PRIORITY. If you are using a space and do not have a valid reservation,<br></br>you must leave when asked by a group that has a valid reservation.</P7>
       </div>
-      <Summary building="Morrison" room="218" />
+      <Summary building={buildingData['short']} room={roomData['room_number']} />
     </div>
   );
 }
