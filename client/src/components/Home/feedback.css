@@ -1,0 +1,11 @@
+.feedback {
+    left: 103px;
+    color: #000000;
+    background-color: white;
+    max-width: 544px;
+}
+
+.feedback-text {
+    word-wrap: break-word;
+}
+

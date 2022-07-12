@@ -17,7 +17,7 @@ const Login = () => {
       // trigger a loading screen
       return;
     }
-    if (user) navigate("/profile");
+    if (user) navigate("/");
   }, [user, loading]);
 
   return (
