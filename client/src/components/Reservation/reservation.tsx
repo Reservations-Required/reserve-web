@@ -31,7 +31,7 @@ const Reservation = () => {
             step: 1800, // 30 mins
           }}
           sx={{ width: 150 }}
-          onChange = {(e) => {startChange(e.target.value)}}
+          onChange={(e) => { startChange(e.target.value) }}
         />
       </div>
     )
@@ -50,17 +50,21 @@ const Reservation = () => {
             step: 1800, // 30 mins
           }}
           sx={{ width: 150 }}
-          onChange = {(e) => {endChange(e.target.value)}}
+          onChange={(e) => { endChange(e.target.value) }}
         />
 
       </div>
     )
   }
 
-  function handleSubmit() {
-    console.log(date.toDateString());
-    console.log(start);
-    console.log(end);
+  const [returnData, setReturnData] = useState({ date: "", start: "", end: "" });
+
+  async function handleSubmit() {
+    setReturnData({
+      date: `${date.toDateString()}`,
+      start: `${start}`,
+      end: `${end}`
+    })
   }
 
   return (
@@ -69,41 +73,48 @@ const Reservation = () => {
       <div className='selectionPanel'>
 
         <div className='selectionPanel-title'><P1>Choose a Date & Time</P1></div>
+        <div className="selectionPanel-content">
+          <Calendar className='selectionPanel-calendar'
+            next2Label={null}
+            prev2Label={null}
+            value={date}
+            onChange={onChange}
+            showNeighboringMonth={false}
+            view={"month"}
+            calendarType={"US"}
+          />
 
-        <Calendar className='react-calendar'
-          next2Label={null}
-          prev2Label={null}
-          value={date}
-          onChange={onChange}
-          showNeighboringMonth={false}
-          view={"month"}
-          calendarType={"US"}
-        />
+          <img src={TimeIcon} />
+          <div className="selectionPanel-timePanel">
 
-        <img src={TimeIcon} />
-
-        <div className='selectionPanel-from'>
-          <button className='selectionPanel-times' onClick={() => setFromisOpen(!fromIsOpen)}>
-            <div className='selectionPanel-titles'>Start time</div>
-          </button>
-          <div className="dropdown">{fromIsOpen && startTime()}</div>
-          {/* <Modal open={fromIsOpen}>
+            <div className='selectionPanel-from'>
+              <button className='selectionPanel-times' onClick={() => setFromisOpen(!fromIsOpen)}>
+                <div className='selectionPanel-titles'>Start time</div>
+              </button>
+              <div className="dropdown">{fromIsOpen && startTime()}</div>
+              {/* <Modal open={fromIsOpen}>
             <div className='dropdown'></div>
           </Modal> */}
 
-        </div>
+            </div>
+            <P2>to</P2>
 
-        <div className='selectionPanel-to'>
-          <button className='selectionPanel-times' onClick={() => setToisOpen(!toIsOpen)}>
-            <div className='selectionPanel-titles'>End time</div>
-          </button>
-          {/* <Modal open={toIsOpen}>
+            <div className='selectionPanel-to'>
+              <button className='selectionPanel-times' onClick={() => setToisOpen(!toIsOpen)}>
+                <div className='selectionPanel-titles'>End time</div>
+              </button>
+              {/* <Modal open={toIsOpen}>
             <div className='dropdown'></div>
           </Modal> */}
-          <div className="dropdown">{toIsOpen && endTime()}</div>
+              <div className="dropdown">{toIsOpen && endTime()}</div>
+            </div>
+          </div>
+
         </div>
-        
-        <StyledButton2 onClick = {handleSubmit}>Done</StyledButton2>
+        <div className="selectionPanel-submit">
+          <StyledButton2 onClick={handleSubmit}>Done</StyledButton2>
+        </div>
+
       </div>
     </div>
   );
