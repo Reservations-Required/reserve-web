@@ -79,8 +79,13 @@
     display: block;
 } */
 
-.NavBar {
+.HomeNavBar {
     background-color: #fff0e3;
+    overflow: hidden;
+}
+
+.NavBar {
+    background-color: white;
     overflow: hidden;
 }
 
@@ -97,7 +102,7 @@
     padding-right: 20px;
 }
 
-.NavBar li {
+.NavBar li, .HomeNavBar li {
     list-style: none;
     display: inline-flex;
     flex-direction: row;

@@ -3,7 +3,7 @@ import { H2, P7 } from '../../styles/fonts.style';
 import LOGO from '../../assets/roomservationW.svg';
 import { NavLink } from "react-router-dom";
 
-const Home = () => {
+const Footer = () => {
 
     return (
         <div className='footer'>
@@ -22,7 +22,7 @@ const Home = () => {
             </div>
 
             <div className='footer-bottom'>
-                <P7>made by Reservations Required © 2022 </P7>
+                <P7>made by Reservations Required &copy; {new Date().getFullYear()} </P7>
             </div>
 
         </div>
@@ -30,4 +30,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default Footer;

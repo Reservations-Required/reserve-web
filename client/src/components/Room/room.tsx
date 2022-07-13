@@ -8,6 +8,7 @@ import tv from "../../assets/TV.svg"
 import whiteboard from "../../assets/Whiteboard.svg"
 import poweroutlet from "../../assets/Power Outlet.svg"
 import wheelchairaccessible from "../../assets/Wheelchair Accessible.svg"
+import SearchBar from '../SearchBar/searchbar';
 
 const amenitiesDict = new Map([
   ["TV", tv],
@@ -38,6 +39,7 @@ const Room = () => {
 
   return (
     <div className="room">
+      <div className="searchBar"><SearchBar /></div>
       <div className="room_left">
         <H2>{buildingData['short']} {roomData['room_number']}</H2>
         <P4>{buildingData['location']} | {buildingData['name']}</P4>
