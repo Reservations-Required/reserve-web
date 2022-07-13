@@ -1,8 +1,8 @@
-import { H2, P3 } from '../../styles/fonts.style';
+import { H2, P3 } from '../../../styles/fonts.style';
 import './feedback.css';
-import ContactButton from '../../assets/contactButton.svg';
+import ContactButton from '../../../assets/contactButton.svg';
 
-const Home = () => {
+const Feedback = () => {
 
     return (
         <div className='feedback'>
@@ -20,4 +20,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default Feedback;

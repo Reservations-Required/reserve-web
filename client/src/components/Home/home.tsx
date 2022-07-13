@@ -2,8 +2,8 @@ import './home.css';
 import SearchBar from '../SearchBar/searchbar';
 import { H2 } from '../../styles/fonts.style';
 import design from '../../assets/homeDesign.svg';
-import Feedback from './/feedback';
-import Footer from './/footer';
+import Feedback from './Feedback/feedback';
+import Footer from '../Footer/footer';
 
 const Home = () => {
 

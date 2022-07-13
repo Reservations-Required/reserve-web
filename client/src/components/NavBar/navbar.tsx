@@ -1,7 +1,7 @@
 import './navbar.css';
 import '../Home/home.css';
-import { NavLink } from "react-router-dom";
-import { useState } from 'react';
+import { NavLink, useLocation } from "react-router-dom";
+import { useEffect, useState } from 'react';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { P1, P5 } from '../../styles/fonts.style';
 import LOGO from '../../assets/roomservationB.svg';
@@ -20,8 +20,19 @@ const NavBar = () => {
         }
     });
 
+    const [navBg, setNavBg] = useState("HomeNavBar");
+    //const location = useLocation();
+    // useEffect(() => {
+    //     if (window.location.pathname === "/") {
+    //         setNavBg("HomeNavBar")
+    //     }
+    //     else {
+    //         setNavBg("NavBar");
+    //     }
+    // }, []);
+
     return (
-        <div className="NavBar">
+        <div className={navBg}>
             <div className='left'>
                 <img className="navLogo" src={LOGO} />
             </div>

@@ -1,8 +1,21 @@
 .RoomGrid {
-    direction: row;
     justify-content: flex-start;
     align-items: center;
 
     position: relative;
+    display: block;
+}
+
+.content {
     display: flex;
+    position: relative;
+    width: max-content;
+}
+
+.filter {
+    float: left;
+}
+
+.grid {
+    float: right;
 }

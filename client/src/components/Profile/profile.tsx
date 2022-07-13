@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import "./profile.css";
-import { auth, db, logout } from "../../firebase";
-import { StyledButton } from "../../styles/button.style";
+import { auth } from "../../firebase";
 import { fetchUserName } from "../../firebase/functions";
 import { H2, P1, P5 } from "../../styles/fonts.style";
 
@@ -24,10 +23,6 @@ const Profile = () => {
       <P5>Here are all your reservations and favorited rooms.</P5>
       <P1>Favorited Rooms</P1>
       <P1>Reservations</P1>
-      <div className="button">
-        <StyledButton onClick={logout}>Logout</StyledButton>
-      </div>
-      
 
     </div>
   );
