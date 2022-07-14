@@ -1,19 +1,34 @@
 import './home.css';
-import RoomGrid from '../RoomGrid/roomgrid';
+import SearchBar from '../SearchBar/searchbar';
 import { H2 } from '../../styles/fonts.style';
 import BuildingSearch from '../BuildingSearch/BuildingSearch';
+import design from '../../assets/homeDesign.svg';
+import Feedback from './Feedback/feedback';
+import Footer from '../Footer/footer';
 
 const Home = () => {
 
   return (
-    <div>
-      <H2 className = "title">Some think reserving rooms is an addiction. </H2>
-      <H2 className = "title">For us, it's a <span className="title2">lifestyle</span>.</H2>
-      <div className="card">
-        <RoomGrid />
+    <div className='Home'>
+      <img className="homedesign" src={design} />
+      
+      <div className='top'>
+        <H2 className="title">Reservations Made <span className="title2">Easy</span>. </H2>
+        <div className='searchBar'>
+          <SearchBar />
+        </div>
       </div>
-      <BuildingSearch />
+
+      <div className='feedback-container'>
+        <Feedback/>
+      </div>
+
+      <div className='footer'>
+        <Footer/>
+      </div>
+
     </div>
+
   );
 }
 

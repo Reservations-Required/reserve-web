@@ -15,7 +15,7 @@ import {
 } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
-const SERVER_URL = "http://localhost:8080/api";
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);

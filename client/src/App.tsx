@@ -6,7 +6,9 @@ import Room from './components/Room/room';
 import Admin from './components/Admin/admin';
 import Login from './components/Login/login';
 import Profile from './components/Profile/profile';
+import Confirmation from './components/Confirmation/confirmation';
 import NavBar from './components/NavBar/navbar';
+import RoomGrid from './components/RoomGrid/roomgrid';
 
 const WithoutNav = () => <Outlet />
 
@@ -27,13 +29,15 @@ function App() {
           <Route element={<WithoutNav />} >
             <Route path='/login' element={<Login />} />
           </Route>
-          
+
           <Route element={<WithNav />} >
             <Route path='/' element={<Home />} />
             <Route path='/reservation' element={<Reservation />} />
-            <Route path='/room' element={<Room building='Morrison' room='218E' image='temp string for img' location='north campus' capacity={[4, 6]} amenities={[]} />} />
+            <Route path='/roomgrid' element={<RoomGrid />} />
+            <Route path='/room/:r_id' element={<Room />} />
             <Route path='/admin' element={<Admin />} />
             <Route path="/profile" element={< Profile />} />
+            <Route path="/confirmation" element={<Confirmation room={"Toni Morrison 218"} date={"Wed, Apr 20, 2022"} time={"12:00 PM - 2:00 PM"} purpose={"Finals Study Session"} />} />
           </Route>
         </Routes>
       </BrowserRouter>

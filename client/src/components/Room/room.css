@@ -1,4 +1,24 @@
-.Room {
-	background-color: #F1FAF9;
-	font-weight: 100;
+.room_left{
+	position: absolute;
+	top: 221px;
+	left: 97px;
+}
+
+.image{
+	width: 327px;
+	height: 262px;
+	position: absolute;
+	top: 0px;
+	left: 467px;
+	border-radius: 20px;
+}
+
+.attributes{
+	color: #65C6AF;
+}
+
+.attributes_options{
+	position: absolute;
+	top: 146px;
+	left: 146px;
 }

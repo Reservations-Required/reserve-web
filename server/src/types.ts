@@ -11,18 +11,24 @@ export type UserType = {
 
 export type ReservationType = {
 	u_id: string;
-	start: Date;
-	end: Date;
+	r_id: number;
+	start: Time;
+	end: Time;
 }
 
 export type RoomType = {
-	r_id: number;
 	b_id: number;
+	r_id: number;
 	room_number: string;
 	description: string;
 	image: string;
 	amenities: string[];
-	reservations: ReservationType[];
+	accessible: string;
+	capacity: number;
+	food: boolean;
+	locked: boolean;
+	open: Time | null;
+	closed: Time | null;
 }
 
 export type RoomIDType = {
@@ -31,11 +37,18 @@ export type RoomIDType = {
 }
 
 export type BuildingType = {
-	b_id: number;
 	description: string;
 	location: string;
 	name: string;
 	image: string;
 	short: string;
-	rooms: string[];
+	rooms: RoomIDType[];
+}
+
+export type Time = {
+	year: number;
+	month: number;
+	day: number;
+	hour: number;
+	minute: number;
 }

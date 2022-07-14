@@ -1,27 +1,27 @@
-.login_title{
-  margin-left: 87px;
-  font-family: 'Open Sans';
+.web_logo{
+  margin-top: 70px;
+  margin-left: 70px;
 }
 
-.login_title1{
-  line-height: 25px 57%;
+.login_title{
+  margin-top: 125px;
+  margin-left: 87px;
 }
 
 .login_title2{
-  line-height: 67px 82%;
+  margin-top: -40px;
   color: #65C6AF
 }
 
 .login_text{
+  margin-top: 80px;
   margin-left: 93px;
-  font-family: 'Open Sans';
-  line-height: 33px 100%;
 }
 
 .login_button {
   margin-left: 93px;
-  width: 364px;
-  height: 72px;
+  width: 356px;
+  height: 71px;
   color: black;
   background-color: white;
   border: 1px solid black;
@@ -29,15 +29,23 @@
 }
 
 .google_logo{
+  float: left;
+  margin-top: 10px;
+  margin-left: 61px;
   width: 35px;
   height: 35px;
 }
 
+.login_button_text{
+  margin-right: 61px;
+  float: right;
+}
+
 .login_logo{
-  width: 900px;
-  height: 909px;
+  float: right;
+  width: 60vw;
+  height: auto;
   margin-top: 30px;
   margin-right: 35px;
   margin-bottom: 30px;
-  float: right;
 }

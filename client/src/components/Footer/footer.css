@@ -1,0 +1,34 @@
+.footer {
+    background-color: black;
+    color: white;
+    height: 240px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+
+    padding-top: 20px;
+}
+
+.footer-left, .footer-right {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.footer-bottom{
+    align-items: center;
+    align-self: center;
+    
+    padding-top: 10px;
+}
+
+.admin {
+    text-decoration: none;
+    color: white;
+}
