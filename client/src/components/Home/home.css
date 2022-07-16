@@ -1,23 +1,4 @@
-.Home {
-	background-color: #F1FAF9;
-	font-weight: 100;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-}
-.card {
-	display: flex;
-}
-
-.title {
-	color:#65C6AF;
-	text-align: center;
-}
-
-.title2 {
-	color: #FFC38B;
-}
-
+/* 
 .searchBar {
 	box-sizing: border-box;
 
@@ -28,4 +9,47 @@
 	background: #FFFFFF;
 	border: 3px solid #65C6AF;
 	border-radius: 48px;
+} 
+*/
+
+.Home {
+	position: relative;
+	display: flex;
+	flex-direction: column;
 }
+
+.homedesign {
+	background-repeat: no-repeat;
+	overflow: hidden;
+	object-fit: cover;
+	padding-top: 120px;
+	
+	background-color: #fff0e2;
+	min-width:875px ;
+	max-height: 613px;
+}
+
+.top {
+	align-items: center;
+	align-self: center;
+	position: absolute;
+}
+
+.title {
+	color: #000000;
+	text-align: center;
+}
+
+.title2 {
+	color: #65C6AF;
+}
+
+.feedback-container {
+	padding-left: 40px;
+	background-color: #FFFFFF;
+	word-wrap: break-word;
+	padding-top: 60px;
+	padding-bottom: 100px;
+}
+
+

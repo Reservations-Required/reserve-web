@@ -54,6 +54,7 @@ router.post("/", async (req, res) => {
 	const ref = roomsCollection.doc(req.body.r_id.toString());
 
 	const room: RoomType = {
+		r_id: req.body.r_id,
 		b_id: req.body.b_id,
 		room_number: req.body.room_number,
 		description: req.body.description,

@@ -18,3 +18,12 @@ export const StyledButton2 = styled(Button)({
 	backgroundColor: '#FFC38B',
 	borderRadius: '25px',
 });
+
+export const BuildingSearchButton = styled(Button)({
+	display: "block",
+	color: "#777777",
+	"&:hover": {
+		backgroundColor: "#F1F5F4",
+		color: "#000000",
+	}
+});
