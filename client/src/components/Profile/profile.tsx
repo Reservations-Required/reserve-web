@@ -23,7 +23,7 @@ const Profile = () => {
 
   useEffect(() => {
     if (loading) return;
-    if (!user) return navigate("/");
+    if (!user) return;
     fetchUserName(user, setName);
     // getUserData()
   }, [user, loading, userData]);
@@ -36,9 +36,6 @@ const Profile = () => {
       <P1>Favorited Rooms</P1>
       <P1>Reservations</P1>
       {JSON.stringify(userData["my_reservations"])}
-      <div className="button">
-        <StyledButton onClick={logout}>Logout</StyledButton>
-      </div>
     </div>
   );
 }

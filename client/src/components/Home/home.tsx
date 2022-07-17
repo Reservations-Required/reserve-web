@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className='Home'>
       <img className="homedesign" src={design} />
-      
+
       <div className='top'>
         <H2 className="title">Reservations Made <span className="title2">Easy</span>. </H2>
         <div className='searchBar'>
@@ -20,11 +20,11 @@ const Home = () => {
       </div>
 
       <div className='feedback-container'>
-        <Feedback/>
+        <Feedback />
       </div>
 
       <div className='footer'>
-        <Footer/>
+        <Footer />
       </div>
 
     </div>

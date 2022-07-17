@@ -39,7 +39,7 @@ const Room = () => {
 
   return (
     <div className="room">
-      <div className="searchBar"><SearchBar /></div>
+      <div className="searchBarRoom"><SearchBar /></div>
       <div className="room_left">
         <H2>{buildingData['short']} {roomData['room_number']}</H2>
         <P4>{buildingData['location']} | {buildingData['name']}</P4>

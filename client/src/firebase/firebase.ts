@@ -59,6 +59,8 @@ export const signInWithGoogle = async () => {
     // otherwise, add the new user to database
     if (docs.docs.length === 0) {
       addUser(user.uid, user.displayName!, user.email!, "student");
+      signOut(auth);
+      signInWithGoogle();
     }
   } catch (err: any) {
     console.error(err);

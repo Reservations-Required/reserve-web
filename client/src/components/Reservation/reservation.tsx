@@ -6,6 +6,7 @@ import { P1, P2, P5 } from '../../styles/fonts.style';
 import TimeIcon from '../../assets/time.svg';
 import { StyledButton2 } from '../../styles/button.style';
 import { TextField } from '@mui/material';
+import SearchBar from '../SearchBar/searchbar';
 
 const Reservation = () => {
 
@@ -69,6 +70,9 @@ const Reservation = () => {
 
   return (
     <div className="Reservation">
+      <div className="searchBar">
+        <SearchBar />
+      </div>
 
       <div className='selectionPanel'>
 

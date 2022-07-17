@@ -1,84 +1,3 @@
-/* .NavBar {
-    background-color: #fff0e3;
-    overflow: hidden;
-}
-
-.navLogo {
-    padding: 30px 35px;
-    height: 60px;
-    float: left;
-}
-
-.right {
-    display: block;
-    float: right;
-    padding-top: 10px;
-    padding-right: 20px;
-}
-
-.NavBar li {
-    list-style: none;
-    font-size: 24px;
-    display: inline-block;
-    padding: 10px;
-    margin-right: 10px;
-
-    
-}
-
-.home,
-.signin {
-    text-decoration: none;
-    color: black;
-}
-
-.navdropdown .navdropbtn {
-    border: none;
-    outline: none;
-    background: none;
-    padding: 14px 16px;
-}
-
-.navbar a:hover,
-.navdropdown:hover .navdropbtn {
-    background: rgba(217, 217, 217, 0.4);
-    border-radius: 30px;
-}
-
-.navdropdown-content {
-    display: none;
-    position: absolute;
-    min-width: 190px;
-
-    background: #FFFFFF;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 16px;
-
-    z-index: 100;
-}
-
-.navdropdown-content a {
-    float: none;
-    color: black;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-
-    padding-top: 1px;
-    padding-bottom: 1px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.navdropdown-content a:hover {
-    background-color: #F1F5F4;
-    border-radius: 16px;
-}
-
-.navdropdown:hover .navdropdown-content {
-    display: block;
-} */
-
 .HomeNavBar {
     background-color: #fff0e3;
     overflow: hidden;
@@ -115,6 +34,11 @@
 .signin {
     text-decoration: none;
     color: black;
+    font-size: 24px;
+}
+
+.active {
+    font-weight: 600;
 }
 
 .navdropdown .navdropbtn {

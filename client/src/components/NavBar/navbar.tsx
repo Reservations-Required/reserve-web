@@ -8,8 +8,11 @@ import LOGO from '../../assets/roomservationB.svg';
 import icon from '../../assets/profileIcon.svg';
 import { logout } from "../../firebase";
 
+interface NavBarProps {
+    home: boolean
+}
 
-const NavBar = () => {
+const NavBar = (props: NavBarProps) => {
     const [logged, setlogged] = useState(false);
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
@@ -20,32 +23,21 @@ const NavBar = () => {
         }
     });
 
-    const [navBg, setNavBg] = useState("HomeNavBar");
-    //const location = useLocation();
-    // useEffect(() => {
-    //     if (window.location.pathname === "/") {
-    //         setNavBg("HomeNavBar")
-    //     }
-    //     else {
-    //         setNavBg("NavBar");
-    //     }
-    // }, []);
-
     return (
-        <div className={navBg}>
+        <div className={`${props.home ? "HomeNavBar" : "NavBar"}`}>
             <div className='left'>
                 <img className="navLogo" src={LOGO} />
             </div>
             <div className='right'>
                 <li>
                     <NavLink to="/" className='home' >
-                        <P1>Home</P1>
+                        <p>Home</p>
                     </NavLink>
                 </li>
                 <li>
                     {!logged ? (
                         <NavLink to="/login" className='signin'>
-                            <P1>Sign In</P1>
+                            <p>Sign In</p>
                         </NavLink>
                     ) : (
                         <div className='navdropdown' >

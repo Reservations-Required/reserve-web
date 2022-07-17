@@ -15,7 +15,16 @@ const WithoutNav = () => <Outlet />
 const WithNav = () => {
   return (
     <>
-      <NavBar />
+      <NavBar home={false} />
+      <Outlet />
+    </>
+  )
+}
+
+const HomeComponent = () => {
+  return (
+    <>
+      <NavBar home={true} />
       <Outlet />
     </>
   )
@@ -30,8 +39,11 @@ function App() {
             <Route path='/login' element={<Login />} />
           </Route>
 
-          <Route element={<WithNav />} >
+          <Route element={<HomeComponent />} >
             <Route path='/' element={<Home />} />
+          </Route>
+
+          <Route element={<WithNav />} >
             <Route path='/reservation' element={<Reservation />} />
             <Route path='/roomgrid' element={<RoomGrid />} />
             <Route path='/room/:r_id' element={<Room />} />
