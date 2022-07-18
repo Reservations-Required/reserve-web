@@ -3,10 +3,7 @@ import './reservation.css';
 import Modal from './Dropdown/dropdown';
 import Calendar from 'react-calendar';
 import { P1, P2, P5 } from '../../styles/fonts.style';
-import TimeIcon from '../../assets/time.svg';
-import { StyledButton2 } from '../../styles/button.style';
 import { TextField } from '@mui/material';
-import SearchBar from '../SearchBar/searchbar';
 
 const Reservation = () => {
 
@@ -68,12 +65,10 @@ const Reservation = () => {
     })
   }
 
+  console.log(returnData)
+
   return (
     <div className="Reservation">
-      <div className="searchBar">
-        <SearchBar />
-      </div>
-
       <div className='selectionPanel'>
 
         <div className='selectionPanel-title'><P1>Choose a Date & Time</P1></div>
@@ -88,37 +83,36 @@ const Reservation = () => {
             calendarType={"US"}
           />
 
-          <img src={TimeIcon} />
           <div className="selectionPanel-timePanel">
 
             <div className='selectionPanel-from'>
-              <button className='selectionPanel-times' onClick={() => setFromisOpen(!fromIsOpen)}>
+              <button className='selectionPanel-times-from' onClick={() => setFromisOpen(!fromIsOpen)}>
                 <div className='selectionPanel-titles'>Start time</div>
               </button>
-              <div className="dropdown">{fromIsOpen && startTime()}</div>
+             {fromIsOpen && startTime()}
               {/* <Modal open={fromIsOpen}>
             <div className='dropdown'></div>
           </Modal> */}
 
             </div>
-            <P2>to</P2>
+            
+            <P2 className="to">to</P2>
 
             <div className='selectionPanel-to'>
-              <button className='selectionPanel-times' onClick={() => setToisOpen(!toIsOpen)}>
+              <button className='selectionPanel-times-to' onClick={() => setToisOpen(!toIsOpen)}>
                 <div className='selectionPanel-titles'>End time</div>
               </button>
               {/* <Modal open={toIsOpen}>
             <div className='dropdown'></div>
           </Modal> */}
-              <div className="dropdown">{toIsOpen && endTime()}</div>
+              {toIsOpen && endTime()}
             </div>
           </div>
 
         </div>
-        <div className="selectionPanel-submit">
-          <StyledButton2 onClick={handleSubmit}>Done</StyledButton2>
-        </div>
-
+      </div>
+      <div className="selectionPanel-submit" onClick={handleSubmit}>
+        <P2 className="selectionPanel-text">Done</P2>
       </div>
     </div>
   );

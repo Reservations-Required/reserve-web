@@ -1,43 +1,111 @@
-.selectionPanel {
-	position: absolute;
-	width: 60%;
-	height: 40%;
-	left: 20%;
-	top: 50%;
+.Reservation {
+	box-sizing: border-box;
+
+	/* Auto layout */
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 32px 40px;
+	gap: 4px;
+
+	width: 768.27px;
+	height: 484px;
 
 	background: #FFFFFF;
-	border-radius: 49px;
+	/* Morrison Green */
+
 	border: 3px solid #65C6AF;
+	/* dropdown */
+
+	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+	border-radius: 48px;
+
+	/* Inside auto layout */
+
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+}
+
+.selectionPanel {
+	/* Auto layout */
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0px;
+	gap: 24px;
+
+	width: 688.27px;
+	height: 373px;
+
+
+	/* Inside auto layout */
+
+	flex: none;
+	order: 0;
+	flex-grow: 0;
 }
 
 .selectionPanel-title {
-	position: relative;
-	text-align: center;
+	/* Inside auto layout */
 
-	line-height: 30px;
-	/* identical to box height */
-
-	color: #000000;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
 }
 
 .selectionPanel-content {
-	position: relative;
+	/* Auto layout */
+
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 48px;
+
+	width: 693.27px;
+	height: 316px;
+
+
+	/* Inside auto layout */
+
+	flex: none;
+	order: 1;
+	flex-grow: 0;
 }
 
 .selectionPanel-calendar {
-	position: relative;
-	width: 260px;
+	width: 260.27px;
 	height: 233px;
-	float: left;
+
+	/* Inside auto layout */
+
+	flex: none;
+	order: 0;
+	flex-grow: 0;
 }
 
 .selectionPanel-timePanel {
-	position: relative;
-	float: right;
+	/* Auto layout */
+
 	display: flex;
-	direction: row;
-    justify-content: flex-start;
-    align-items: center;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 16px;
+
+	width: 385px;
+	height: 47px;
+
+
+	/* Inside auto layout */
+
+	flex: none;
+	order: 1;
+	flex-grow: 0;
 }
 
 .selectionPanel-from {
@@ -61,35 +129,98 @@
 	color: #C4C4C4;
 }
 
-.selectionPanel-times {
+.selectionPanel-times-from {
 	box-sizing: border-box;
 
-	position: absolute;
-	width: 192px;
+	/* Auto layout */
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 48px 10px 16px;
+
+	width: 156px;
 	height: 47px;
-	left: 0px;
-	bottom: 0px;
 
 	border: 2px solid #C4C4C4;
-	border-radius: 14px;
-	background-color: #ffffff;
+	border-radius: 16px;
+	background-color: white;
+
+	/* Inside auto layout */
+
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+.to {
+	margin: 10px;
+}
+
+.selectionPanel-times-to {
+	box-sizing: border-box;
+
+	/* Auto layout */
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 48px 10px 16px;
+
+	width: 156px;
+	height: 47px;
+
+	border: 2px solid #C4C4C4;
+	border-radius: 16px;
+	background-color: white;
+
+	/* Inside auto layout */
+
+	flex: none;
+	order: 2;
+	flex-grow: 0;
 }
 
 .dropdown {
 	width: 192px;
 	height: 200px;
-	
+
 }
 
 .selectionPanel-submit {
-	position: relative;
+	/* Auto layout */
+
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 8px 48px;
+
+	/* Morrison Yellow */
+
+	background: #FFC38B;
+	border-radius: 48px;
+
+	/* Inside auto layout */
+
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+
+	cursor: pointer;
+	color: white;
+}
+
+.selectionPanel-text {
+	margin: 0;
 }
 
 /* Calendar */
 
 .react-calendar {
 	width: 260px;
-	max-width: 100%;
+	height: 233px;
 	background: white;
 	line-height: 1.125em;
 	color: #C4C4C4;
@@ -142,6 +273,7 @@
 .react-calendar__navigation button:disabled {
 	background-color: #f0f0f0;
 }
+
 /* 
 .react-calendar__navigation button:enabled:hover, */
 .react-calendar__month-view__weekdays {

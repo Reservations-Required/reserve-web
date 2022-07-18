@@ -12,25 +12,25 @@ const BuildingSearch = () => {
     const buildings: string[] = ["Toni Morrison Hall", "Ruth Bader Ginsburg Hall", "Barbara McClintock Hall", "Upson Hall", "Carpenter Hall", "Olin Library"];
     const buildingsMap: React.ReactNode[] = buildings.map((e) => { return <BuildingSearchButton> {e} </BuildingSearchButton> });
     return (
-        <div className= "heading">
-            <div className = "campus">
-                <P1>
+        <div className="building-heading">
+            <div className="campus">
+                <P1 className="campus-heading">
                     <img src={TreeIcon} />
                     Campus
                 </P1>
-                <P4>
+                <div className="campus-content">
                     {campusMap}
-                </P4>
+                </div>
             </div>
             <div className="vl"></div>
-            <div className = "buildings">
-                <P1>
+            <div className="buildings">
+                <P1 className="buildings-heading">
                     <img src={BuildingIcon} />
                     Building
                 </P1>
-                <P4>
+                <div className="buildings-content">
                     {buildingsMap}
-                </P4>
+                </div>
             </div>
         </div>
     );

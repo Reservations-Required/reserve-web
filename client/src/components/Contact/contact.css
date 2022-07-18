@@ -1,0 +1,16 @@
+.Contact {
+	/* background-color: #247964; */
+	/* Auto layout */
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0px;
+	gap: 32px;
+
+	position: absolute;
+	height: 649px;
+	left: 258px;
+	right: 258px;
+	top: 168px;
+}

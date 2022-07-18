@@ -31,12 +31,18 @@ const RoomCard = (props: RoomCardProps) => {
 
     getImage();
     getBuilding();
-    
+
     return (
-        <div className='RoomCard' onClick = {() => {navigate(`/room/${props.data.r_id}`)}}>
+        <div className='RoomCard' onClick={() => { navigate(`/room/${props.data.r_id}`) }}>
             <img id={`roomImage`} width="100" src="" />
-            <P2>{building} {props.data.room_number}</P2>
-            <P7>{props.data.capacity} people</P7>
+            <div className="content">
+                <div className="mainInfo">
+                    <P2>{building} {props.data.room_number}</P2>
+                </div>
+                <div className="capacity">
+                    <P7>{props.data.capacity} people</P7>
+                </div>
+            </div>
         </div>
     );
 };

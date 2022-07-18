@@ -28,7 +28,7 @@
     padding-top: 10px;
 }
 
-.admin {
+.admin, .contact-footer {
     text-decoration: none;
     color: white;
 }

@@ -8,7 +8,6 @@ import tv from "../../assets/TV.svg"
 import whiteboard from "../../assets/Whiteboard.svg"
 import poweroutlet from "../../assets/Power Outlet.svg"
 import wheelchairaccessible from "../../assets/Wheelchair Accessible.svg"
-import SearchBar from '../SearchBar/searchbar';
 
 const amenitiesDict = new Map([
   ["TV", tv],
@@ -39,7 +38,6 @@ const Room = () => {
 
   return (
     <div className="room">
-      <div className="searchBarRoom"><SearchBar /></div>
       <div className="room_left">
         <H2>{buildingData['short']} {roomData['room_number']}</H2>
         <P4>{buildingData['location']} | {buildingData['name']}</P4>
@@ -57,9 +55,11 @@ const Room = () => {
           <P6>{roomData['accessible']}</P6>
         </div>
         <P1>Amenities & Features</P1>
-        <P6>{roomData['amenities']?.map((e: string) => (
-          <li><img src={amenitiesDict.get(e)} /> {e}</li>
-        ))}</P6>
+        <div className="amenities">
+          <P6>{roomData['amenities']?.map((e: string) => (
+            <li><img src={amenitiesDict.get(e)} /> {e}</li>
+          ))}</P6>
+        </div>
         <P1>Reservation Policies</P1>
         <P7>Toni Morrison study rooms may only be booked for 2 hours a day per person.</P7>
         <P7>RESERVATIONS HAVE PRIORITY. If you are using a space and do not have a valid reservation,<br></br>you must leave when asked by a group that has a valid reservation.</P7>

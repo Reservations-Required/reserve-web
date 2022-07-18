@@ -6,16 +6,42 @@
     display: block;
 }
 
-.content {
+.grid-content {
     display: flex;
     position: relative;
     width: max-content;
 }
 
-.filter {
-    float: left;
+.filter-panel {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 24px;
+    gap: 24px;
+
+    position: absolute;
+    width: 331px;
+    height: 594px;
+    left: 67px;
+    top: 195px;
+
 }
 
 .grid {
-    float: right;
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+
+    position: absolute;
+    height: 682px;
+    left: 298px;
+    right: 181px;
+    top: 194px;
+
 }

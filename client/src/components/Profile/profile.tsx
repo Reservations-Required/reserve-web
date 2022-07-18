@@ -23,9 +23,9 @@ const Profile = () => {
 
   useEffect(() => {
     if (loading) return;
-    if (!user) return;
+    if (!user) return navigate("/");
     fetchUserName(user, setName);
-    // getUserData()
+    getUserData()
   }, [user, loading, userData]);
 
 
@@ -34,6 +34,7 @@ const Profile = () => {
       <H2>Hi, {name.split(" ")[0]}!</H2>
       <P5>Here are all your reservations and favorited rooms.</P5>
       <P1>Favorited Rooms</P1>
+      {JSON.stringify(userData["my_favorites"])}
       <P1>Reservations</P1>
       {JSON.stringify(userData["my_reservations"])}
     </div>

@@ -1,30 +1,160 @@
 .vl {
-    border-left: 1px solid #C4C4C4;
+    width: 0px;
     height: 264px;
-    position: relative;
-    margin-left: -3px;
-    top: 0;
-    width: 5px;
 
+    border: 1px solid #C4C4C4;
 }
 
-.heading {
+.building-heading {
+    box-sizing: border-box;
+
+    /* Auto layout */
+
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 48px;
     gap: 32px;
+
+    width: 637px;
+    height: 360px;
+
+    background: #FFFFFF;
+    /* Morrison Green */
+
+    border: 3px solid #65C6AF;
+    /* dropdown */
+
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
     border-radius: 48px;
-	border: 3px solid #65C6AF;
-    position: absolute;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 
 }
 
 
 .campus {
-    float: left;
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+
+    width: 210px;
+    height: 191px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
-.building {
-    float: right;
+.campus-heading {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+
+    width: 110px;
+    height: 27px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    margin: 0;
+}
+
+.campus-content {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    width: 210px;
+    height: 140px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.buildings {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+
+    width: 267px;
+    height: 262px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+.buildings-heading {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+
+    width: 119px;
+    height: 28px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    margin: 0;
+}
+
+.buildings-content {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    width: 267px;
+    height: 210px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }

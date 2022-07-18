@@ -35,6 +35,11 @@ const NavBar = (props: NavBarProps) => {
                     </NavLink>
                 </li>
                 <li>
+                    <NavLink to = "/contactus" className = 'contact' >
+                        <p>Contact</p>
+                    </NavLink>
+                </li>
+                <li>
                     {!logged ? (
                         <NavLink to="/login" className='signin'>
                             <p>Sign In</p>

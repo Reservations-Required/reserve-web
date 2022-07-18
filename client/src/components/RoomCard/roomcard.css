@@ -1,11 +1,76 @@
 .RoomCard {
-    text-align: left;
-    width: 200px;
-    height: 200px;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 27px;
+    /* room card */
+
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px 16px;
+    gap: 16px;
+
+    width: 331px;
+    height: 331px;
+
+    background: #FFFFFF;
+    /* Morrison Gray */
+
     border: 1px solid #C4C4C4;
-    background-color: white;
-    box-sizing: border-box;
-}  
+    border-radius: 27px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+
+    cursor: pointer;
+}
+
+#roomImage {
+    /* Rectangle 5 */
+
+
+    width: 332px;
+    height: 215px;
+
+    border-radius: 27px 27px 0px 0px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.mainInfo {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px 8px;
+    gap: 16px;
+
+    width: 293px;
+    height: 84px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.capacity {
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    color: #C4C4C4;
+}

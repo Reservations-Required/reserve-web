@@ -1,4 +1,4 @@
-.web_logo{
+/* .web_logo{
   margin-top: 70px;
   margin-left: 70px;
 }
@@ -48,4 +48,149 @@
   margin-top: 30px;
   margin-right: 35px;
   margin-bottom: 30px;
+} */
+
+.login-left {
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px 24px;
+  gap: 56px;
+
+  position: absolute;
+  width: 404px;
+  height: 366px;
+  left: 64px;
+  top: 321px;
+}
+
+.login-right {
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px;
+  gap: 10px;
+
+  position: absolute;
+  width: 851px;
+  height: 859.31px;
+  left: 623px;
+  top: 61px;
+
+}
+
+.web_logo {
+  width: 324px;
+  height: 111px;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.login-container {
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+
+  width: 356px;
+  height: 199px;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.login-text {
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.login-buttons {
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  width: 356px;
+  height: 127px;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.login_button {
+  /* sign in with google */
+
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 18px 69px;
+  gap: 17px;
+
+  width: 356px;
+  height: 71px;
+
+  border: 1px solid #000000;
+  border-radius: 6px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+  background-color: white;
+}
+
+.google_logo {
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  width: 35px;
+  height: 35px;
+}
+
+.login_button_text {
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.login {
+  position: relative;
+  display: flex;
 }

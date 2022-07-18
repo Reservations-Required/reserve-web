@@ -30,7 +30,7 @@ googleProvider.setCustomParameters({
 });
 
 export const signInWithGoogle = async () => {
-  async function addUser(id: string, name: string, email: string, status: string) {
+  async function addUser(id: string, name: string, email: string) {
     await fetch(`${SERVER_URL}/users`, {
       headers: {
         'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ export const signInWithGoogle = async () => {
         u_id: id,
         name: name,
         email: email,
-        status: status,
+        status: "student",
       })
     });
   }
@@ -58,9 +58,7 @@ export const signInWithGoogle = async () => {
     }
     // otherwise, add the new user to database
     if (docs.docs.length === 0) {
-      addUser(user.uid, user.displayName!, user.email!, "student");
-      signOut(auth);
-      signInWithGoogle();
+      addUser(user.uid, user.displayName!, user.email!);
     }
   } catch (err: any) {
     console.error(err);

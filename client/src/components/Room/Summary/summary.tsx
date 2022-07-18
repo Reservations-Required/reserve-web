@@ -6,6 +6,7 @@ import { H3, P1, P3, P6, P7 } from '../../../styles/fonts.style';
 import { StyledButton2 } from '../../../styles/button.style';
 import { useState } from 'react';
 import PencilIcon from '../../../assets/pencilIcon.svg';
+import { useNavigate } from 'react-router-dom';
 
 interface SummaryProps {
 	building: string;
@@ -13,6 +14,8 @@ interface SummaryProps {
 }
 
 const Summary = (props: SummaryProps) => {
+	const navigate = useNavigate();
+	
 	return (
 		<div className="summary">
 			<P1 className="header">Reservation Summary</P1>
@@ -49,7 +52,7 @@ const Summary = (props: SummaryProps) => {
 					variant="standard"
 					placeholder="Why are you reserving this room? (optional)" />
 				<div className='space'></div>
-				<div className="reserve_btn">
+				<div className="reserve_btn" onClick={() => navigate("/confirmation")}>
 					<P1 className='rnow'>Reserve This Room</P1>
 				</div>
 			</div>

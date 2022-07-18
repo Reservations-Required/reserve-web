@@ -9,3 +9,6 @@
     word-wrap: break-word;
 }
 
+.c {
+    cursor: pointer;
+}

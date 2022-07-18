@@ -180,6 +180,8 @@
     flex-grow: 0;
 
     color: white;
+
+    cursor: pointer;
 }
 
 .subheading {

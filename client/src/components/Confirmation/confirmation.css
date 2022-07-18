@@ -1,13 +1,299 @@
+.Confirmation {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 48px;
+
+    position: absolute;
+    left: 20%;
+    top: 25%;
+
+}
+
+.confirmation-heading {
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    margin: 0;
+}
+
 .email {
     font-weight: bold;
 }
 
+.confirmation-content {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 40px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.confirmation-buttons {
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    padding: 0px;
+    gap: 96px;
+
+    order: 2;
+    flex: none;
+    flex-grow: 0;
+}
+
 .reservation_summary {
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+
+    width: 441px;
+    height: 269px;
+
+    /* Morrison Gray */
+
     border: 1px solid #C4C4C4;
-    border-radius: 33px; 
+    border-radius: 16px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
 .account {
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+
+    width: 385px;
+    height: 195px;
+
+    /* Morrison Gray */
+
     border: 1px solid #C4C4C4;
-    border-radius: 33px;
+    border-radius: 16px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.back {
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    cursor: pointer;
+
+    margin: 0;
+}
+
+.confirm {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 64px;
+    gap: 10px;
+
+    /* Black */
+
+    background: #000000;
+    border-radius: 32px;
+
+    color: white;
+    text-align: center;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    cursor: pointer;
+
+}
+
+/* RESERVATION */
+.reserved-left {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 32px;
+
+    position: absolute;
+    width: 422px;
+    height: 281px;
+    left: 298px;
+    top: 328px;
+
+}
+
+.reserved-heading {
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.email-confirmation {
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.back-home {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 64px;
+    gap: 10px;
+
+    /* Black */
+
+    background: #000000;
+    border-radius: 32px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+
+    color: white;
+    cursor: pointer;
+}
+
+.reserved-right {
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    gap: 16px;
+
+    position: absolute;
+    width: 409px;
+    height: 429px;
+    left: 805px;
+    top: 281px;
+
+    background: #FFFFFF;
+    /* Morrison Gray */
+
+    border: 1px solid #C4C4C4;
+    box-shadow: 20px 20px 0px #65C6AF;
+    border-radius: 16px;
+}
+
+.image-purpose {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+
+    width: 345px;
+    height: 250px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.reservation-info {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.reserved-purpose {
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.reserved-image {
+    width: 345px;
+    height: 193px;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.reserved-room {
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.reserved-time {
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }

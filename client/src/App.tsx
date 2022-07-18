@@ -9,6 +9,7 @@ import Profile from './components/Profile/profile';
 import Confirmation from './components/Confirmation/confirmation';
 import NavBar from './components/NavBar/navbar';
 import RoomGrid from './components/RoomGrid/roomgrid';
+import Contact from './components/Contact/contact';
 
 const WithoutNav = () => <Outlet />
 
@@ -50,6 +51,7 @@ function App() {
             <Route path='/admin' element={<Admin />} />
             <Route path="/profile" element={< Profile />} />
             <Route path="/confirmation" element={<Confirmation room={"Toni Morrison 218"} date={"Wed, Apr 20, 2022"} time={"12:00 PM - 2:00 PM"} purpose={"Finals Study Session"} />} />
+            <Route path ="/contactus" element={<Contact />}/>
           </Route>
         </Routes>
       </BrowserRouter>
