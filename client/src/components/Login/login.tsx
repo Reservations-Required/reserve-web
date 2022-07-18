@@ -17,21 +17,13 @@ const Login = () => {
       // trigger a loading screen
       return;
     }
-    if (user) navigate("/profile", {replace: true});
+    if (user) navigate("/profile", { replace: true });
   }, [user, loading]);
 
   return (
     <div className="login">
       <div className="login_left">
-        <img className="web_logo" src={webLogo}></img>
-        {/* <div className="login_title">
-        <div className="login_title1">
-          <H4>Welcome to</H4>
-        </div>
-        <div className="login_title2">
-          <H1>Reservations<br></br>Required.</H1>
-        </div>
-  </div>*/}
+        <img className="web_logo" src={webLogo} />
         <div className="login-container">
           <div className="login_text">
             <P3>First time and returning users...<br></br>sign in below!</P3>
@@ -43,13 +35,14 @@ const Login = () => {
                 <P3>Sign in with Google</P3>
               </div>
             </button>
+            <div className="login_go_back" onClick={() => navigate(-1)}>
+              <P3>Go Back</P3>
+            </div>
           </div>
         </div>
       </div>
       <div className="login-right">
-        <div className="login_logo">
           <img src={loginLogo} />
-        </div>
       </div>
     </div>
   );

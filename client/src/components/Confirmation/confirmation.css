@@ -248,22 +248,6 @@
     flex-grow: 0;
 }
 
-.reservation-info {
-    /* Auto layout */
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 8px;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-}
-
 .reserved-purpose {
     /* Inside auto layout */
     flex: none;
@@ -275,6 +259,26 @@
     width: 345px;
     height: 193px;
     border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.reservation-info {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    width: 263px;
+    height: 99px;
+
 
     /* Inside auto layout */
 
@@ -296,4 +300,5 @@
     flex: none;
     order: 1;
     flex-grow: 0;
+    
 }

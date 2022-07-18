@@ -74,13 +74,6 @@
   align-items: flex-start;
   padding: 10px;
   gap: 10px;
-
-  position: absolute;
-  width: 851px;
-  height: 859.31px;
-  left: 623px;
-  top: 61px;
-
 }
 
 .web_logo {
@@ -170,6 +163,7 @@
   flex-grow: 0;
 
   background-color: white;
+  cursor: pointer;
 }
 
 .google_logo {
@@ -191,6 +185,40 @@
 }
 
 .login {
-  position: relative;
+  /* Auto layout */
+
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 155px;
+
+  position: absolute;
+  width: 1410px;
+  height: 859.31px;
+  left: 64px;
+  top: 61px;
+}
+
+.login_go_back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  width: 356px;
+  height: 71px;
+
+  /* Morrison Green */
+
+  color: #65C6AF;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+
+  cursor: pointer;
 }

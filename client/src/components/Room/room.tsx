@@ -8,6 +8,7 @@ import tv from "../../assets/TV.svg"
 import whiteboard from "../../assets/Whiteboard.svg"
 import poweroutlet from "../../assets/Power Outlet.svg"
 import wheelchairaccessible from "../../assets/Wheelchair Accessible.svg"
+import Favorites from '../Favorites/favorites';
 
 const amenitiesDict = new Map([
   ["TV", tv],
@@ -65,6 +66,7 @@ const Room = () => {
         <P7>RESERVATIONS HAVE PRIORITY. If you are using a space and do not have a valid reservation,<br></br>you must leave when asked by a group that has a valid reservation.</P7>
       </div>
       <Summary building={buildingData['short']} room={roomData['room_number']} />
+      <Favorites user = {"KuwRJ6GMZPZXCVota3v6UCZVxCE3"} r_id = {roomData["r_id"]} b_id = {roomData["b_id"]}/>
     </div>
   );
 }

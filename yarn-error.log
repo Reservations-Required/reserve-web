@@ -2,7 +2,7 @@ Arguments:
   /usr/local/bin/node /usr/local/Cellar/yarn/1.22.5/libexec/bin/yarn.js global bin
 
 PATH: 
-  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Users/dylantom/opt/anaconda3/bin:/Users/dylantom/opt/anaconda3/condabin:/Users/dylantom/.fig/bin:/Users/dylantom/.local/bin
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Users/dylantom/.fig/bin:/Users/dylantom/.local/bin
 
 Yarn version: 
   1.22.5

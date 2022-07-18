@@ -2,6 +2,7 @@ import './roomcard.css';
 import { useEffect, useState } from 'react';
 import { P2, P7 } from '../../styles/fonts.style';
 import { useNavigate } from 'react-router-dom';
+import Favorites from '../Favorites/favorites';
 
 interface RoomCardProps {
     data: any
@@ -30,7 +31,7 @@ const RoomCard = (props: RoomCardProps) => {
     }
 
     getImage();
-    getBuilding();
+    useEffect(()=>{getBuilding()}, [building]);
 
     return (
         <div className='RoomCard' onClick={() => { navigate(`/room/${props.data.r_id}`) }}>
@@ -41,6 +42,9 @@ const RoomCard = (props: RoomCardProps) => {
                 </div>
                 <div className="capacity">
                     <P7>{props.data.capacity} people</P7>
+                </div>
+                <div className="favorite-room-card">
+                    
                 </div>
             </div>
         </div>

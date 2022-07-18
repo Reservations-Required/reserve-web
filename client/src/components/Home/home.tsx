@@ -1,7 +1,6 @@
 import './home.css';
-import SearchBar from '../SearchBar/searchbar';
+import SearchBar from './SearchBar/searchbar';
 import { H2 } from '../../styles/fonts.style';
-import BuildingSearch from '../BuildingSearch/BuildingSearch';
 import design from '../../assets/homeDesign.svg';
 import Feedback from './Feedback/feedback';
 import Footer from '../Footer/footer';

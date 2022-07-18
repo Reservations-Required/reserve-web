@@ -1,8 +1,8 @@
-import LocationIcon from '../../assets/location.svg';
-import DateIcon from '../../assets/date.svg';
-import SearchIcon from '../../assets/search-icon.svg';
+import LocationIcon from '../../../assets/location.svg';
+import DateIcon from '../../../assets/date.svg';
+import SearchIcon from '../../../assets/search-icon.svg';
 import "./searchbar.css";
-import { P2, P5 } from '../../styles/fonts.style';
+import { P2, P5 } from '../../../styles/fonts.style';
 import { useNavigate } from 'react-router-dom';
 
 const SearchBar = () => {
