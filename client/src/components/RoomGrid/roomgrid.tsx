@@ -23,14 +23,14 @@ const RoomGrid = () => {
             <div className="grid-content">
                 <div className="filter-panel">Filter Panel</div>
                 <div className="grid">
-                    {/* <Grid container columns={9}>
+                    <Grid container columns={9} rowSpacing={3}>
                         {data.map((item) => (
                             <Grid item xs={3}>
                                 <RoomCard favorite={false} data={item} />
                             </Grid>
                         ))}
-                    </Grid> */}
-                    {data.map((item)=> (<RoomCard favorite={false} data={item} />))}
+                    </Grid>
+                    {/* {data.map((item)=> (<RoomCard favorite={false} data={item} />))} */}
                 </div>
             </div>
 

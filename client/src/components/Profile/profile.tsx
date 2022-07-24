@@ -28,15 +28,20 @@ const Profile = () => {
     getUserData()
   }, [user, loading, userData]);
 
-
   return (
     <div className="dashboard">
-      <H2>Hi, {name.split(" ")[0]}!</H2>
-      <P5>Here are all your reservations and favorited rooms.</P5>
-      <P1>Favorited Rooms</P1>
-      {JSON.stringify(userData["my_favorites"])}
-      <P1>Reservations</P1>
-      {JSON.stringify(userData["my_reservations"])}
+      <div className="heading-1">
+        <H2>Hi, {name.split(" ")[0]}!</H2>
+        <P5>Here are all your reservations and favorited rooms.</P5>
+      </div>
+      <div className="favorited-rooms">
+        <P1>Favorited Rooms</P1>
+
+        {JSON.stringify(userData["my_favorites"])}
+      </div>
+
+      {/* <P1>Reservations</P1>
+      {JSON.stringify(userData["my_reservations"])} */}
     </div>
   );
 }

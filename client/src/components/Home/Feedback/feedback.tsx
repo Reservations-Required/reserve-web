@@ -1,11 +1,9 @@
 import { H2, P3 } from '../../../styles/fonts.style';
 import './feedback.css';
 import ContactButton from '../../../assets/contactButton.svg';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Feedback = () => {
-    const navigate = useNavigate();
-
     return (
         <div className='feedback'>
             <H2>Got Feedback?</H2>
@@ -16,7 +14,7 @@ const Feedback = () => {
                 hear your opinions and any improvements we could make.
             </P3>
 
-            <img className="c" src={ContactButton} onClick={() => navigate("/contactus")}/>
+            <Link to="/contactus" style={{ textDecoration: 'none' }}><img className="c" src={ContactButton}/></Link>
         </div>
     );
 }

@@ -3,13 +3,12 @@
     align-items: center;
 
     position: relative;
-    display: block;
+    display: flex;
 }
 
 .grid-content {
     display: flex;
     position: relative;
-    width: max-content;
 }
 
 .filter-panel {
@@ -21,27 +20,24 @@
     padding: 16px 24px;
     gap: 24px;
 
-    position: absolute;
+    position: relative;
     width: 331px;
     height: 594px;
-    left: 67px;
-    top: 195px;
 
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
 .grid {
-    /* Auto layout */
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px;
-    gap: 16px;
+    padding: 16px 24px;
+    gap: 24px;
 
-    position: absolute;
-    height: 682px;
-    left: 298px;
-    right: 181px;
-    top: 194px;
-
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    width: 70%;
 }

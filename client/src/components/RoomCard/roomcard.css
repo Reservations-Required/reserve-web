@@ -29,7 +29,8 @@
     cursor: pointer;
 }
 
-#roomImage {
+
+.roomImage {
     /* Rectangle 5 */
 
 
@@ -45,7 +46,7 @@
     flex-grow: 0;
 }
 
-.mainInfo {
+.room-card-content {
     /* Auto layout */
 
     display: flex;
@@ -66,11 +67,110 @@
     flex-grow: 0;
 }
 
-.capacity {
+.room-card-content-left {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    width: 223px;
+    height: 84px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.room-card-content-right {
+    width: 38px;
+    height: 38px;
+
+
     /* Inside auto layout */
 
     flex: none;
     order: 1;
     flex-grow: 0;
+}
+
+.room-card-content-left-1 {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    width: 178px;
+    height: 54px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.room-card-content-left-2 {
+    width: 89px;
+    height: 22px;
+
+    line-height: 22px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    /* Morrison Gray */
+
     color: #C4C4C4;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.room-card-info {
+    width: 175px;
+    height: 27px;
+
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.room-card-time {
+    width: 178px;
+    height: 27px;
+
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }

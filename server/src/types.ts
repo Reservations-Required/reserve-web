@@ -14,6 +14,7 @@ export type ReservationType = {
 	r_id: number;
 	start: Time;
 	end: Time;
+	reservation_id: number;
 }
 
 export type RoomType = {

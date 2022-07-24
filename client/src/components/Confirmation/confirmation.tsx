@@ -1,19 +1,17 @@
 import { useState, useEffect } from 'react';
-import { H1, H2, H3, H5, P1, P4, P6 } from '../../styles/fonts.style';
-import { useNavigate } from 'react-router-dom';
+import { H2, H3, H5, P1, P4, P6 } from '../../styles/fonts.style';
+import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
 import Account from './Account/account';
 import ReservationSummary from './ReservationSummary/reservationSummary';
 import { fetchUserName } from '../../firebase/functions';
 import './confirmation.css';
-import { Grid } from '@mui/material';
 
 interface SummaryProps {
     room: string;
     date: string;
     time: string;
-    purpose: string;
 }
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
@@ -22,6 +20,7 @@ const Confirmation = (props: SummaryProps) => {
     const [success, setSuccess] = useState(false);
     const [user, loading] = useAuthState(auth);
     const [name, setName] = useState("");
+    const [searchParam] = useSearchParams();
 
     let navigate = useNavigate();
 
@@ -47,7 +46,8 @@ const Confirmation = (props: SummaryProps) => {
                     day: 22,
                     hour: 3,
                     minute: 0
-                }
+                },
+                reservation_id: 4
             })
         });
 
@@ -65,20 +65,12 @@ const Confirmation = (props: SummaryProps) => {
                     <H2>Confirm Reservation</H2>
                 </div>
                 <div className="confirmation-content">
-                    {/* <Grid container columns={2}>
-                        <Grid item xs={1}>
-                            <div className="reservation_summary">
-                                <ReservationSummary {...props} />
-                            </div>
-                        </Grid>
-                        <Grid item xs={1}>
-                            <div className="account">
-                                <Account name={name} email={user?.email} />
-                            </div>
-                        </Grid>
-                    </Grid> */}
                     <div className="reservation_summary">
-                        <ReservationSummary {...props} />
+                        <ReservationSummary 
+                            room={searchParam.get("room")!} 
+                            time={props.time} 
+                            date={props.date} 
+                            purpose={searchParam.get("purpose")!.length == 0 ? "N/A" : searchParam.get("purpose")!} />
                     </div>
                     <div className="account">
                         <Account name={name} email={user?.email} />
@@ -106,23 +98,22 @@ const Confirmation = (props: SummaryProps) => {
                 <div className="email-confirmation">
                     <P4>Your reservation has been confirmed. <br />You will receive an email confirmation at <span className="email">{user?.email}.</span></P4>
                 </div>
-                <div className="back-home" onClick={() => navigate("/")}>
-                    <H3>Back Home</H3>
+                <div className="back-home">
+                    <Link to="/" style={{ textDecoration: 'none', color: 'white' }}><H3>Back Home</H3></Link>
                 </div>
             </div>
             <div className="reserved-right">
                 <div className="image-purpose">
                     <div className="reserved-purpose">
-                        <P1>Finals Study Session</P1>
+                        <P1>{searchParam.get("purpose")!.length == 0 ? "Your Reservation" : searchParam.get("purpose")!}</P1>
                     </div>
                     <div className="reserved-image">
                         <img src="" />
                     </div>
-
                 </div>
                 <div className="reservation-info">
                     <div className="reserved-room">
-                        <H5>Toni Morrison 218</H5>
+                        <H5>{searchParam.get("room")}</H5>
                     </div>
                     <div className="reserved-time">
                         <P6>

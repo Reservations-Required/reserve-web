@@ -19,3 +19,14 @@ export const fetchUserName = async (user: User, setName: React.Dispatch<React.Se
 		alert("An error occured while fetching user data");
 	}
 }
+
+export const checkFavorite = async (user: string, r_id: number, b_id: number) => {
+	const res = await fetch(`${SERVER_URL}/users/${user}`);
+	const userFavorites = (await res.json())["my_favorites"];
+
+	for (const favorite of userFavorites) {
+		if (favorite["r_id"] === r_id && favorite["b_id"] == b_id) return true;
+	}
+
+	return false;
+}

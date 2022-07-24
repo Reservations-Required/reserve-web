@@ -33,7 +33,8 @@ router.post("/:r_id", async (req, res) => {
         u_id: req.body.u_id,
         r_id: parseInt(roomID),
         start: req.body.start,
-        end: req.body.end
+        end: req.body.end,
+        reservation_id: req.body.reservation_id
     };
 
     const startTime = reservation.start;
@@ -42,7 +43,7 @@ router.post("/:r_id", async (req, res) => {
     if (checkTimeSlot(startTime, endTime) != 'Check') {
         res.send({ message: checkTimeSlot(startTime, endTime) });
     } else {
-        const reservationRef = roomCollection.doc(roomID).collection('reservations').doc();
+        const reservationRef = roomCollection.doc(roomID).collection('reservations').doc(reservation.reservation_id.toString());
         await reservationRef.set(reservation);
 
         await fetch(`${SERVER_URL}/users/${req.body.u_id}/reservations`, {
@@ -54,7 +55,8 @@ router.post("/:r_id", async (req, res) => {
             body: JSON.stringify({
                 r_id: parseInt(roomID),
                 start: req.body.start,
-                end: req.body.end
+                end: req.body.end,
+                reservation_id: req.body.reservation_id
             })
         })
 
@@ -71,9 +73,24 @@ router.delete("/:r_id/cancel/:reservation", async (req, res) => {
 
     const reservationCollection = roomCollection.doc(roomID).collection('reservations');
     const ref = reservationCollection.doc(reservationID);
+    const data = (await ref.get()).data();
+
+    await fetch(`${SERVER_URL}/users/${data!["u_id"]}/reservations`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            u_id: data!["u_id"],
+            start: data!["start"],
+            end: data!["end"],
+            reservation_id: parseInt(req.params.reservation),
+            r_id: parseInt(roomID)
+        })
+    })
+
     ref.delete();
-    
-    // Delete user's reservations
 
     res.send(`Deleted reservation ${reservationID} from room ${roomID}`);
 });

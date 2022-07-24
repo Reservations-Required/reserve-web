@@ -3,10 +3,9 @@ import DateIcon from '../../../assets/date.svg';
 import SearchIcon from '../../../assets/search-icon.svg';
 import "./searchbar.css";
 import { P2, P5 } from '../../../styles/fonts.style';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const SearchBar = () => {
-    const navigate = useNavigate();
     return (
         <div className="SearchBar">
             <div className="content">
@@ -35,9 +34,11 @@ const SearchBar = () => {
 
                     </div>
                 </div>
-                <div className="search" onClick={() => { navigate("/roomgrid") }}>
+                <div className="search">
                     <img src={SearchIcon} />
-                    <P2>Search</P2>
+                    <Link to = "/roomgrid" style={{ textDecoration: 'none', color: 'white'}}>
+                        <P2>Search</P2>
+                    </Link>
                 </div>
             </div>
 

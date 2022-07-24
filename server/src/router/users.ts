@@ -79,7 +79,7 @@ router.get("/:u_id/favorites", async (req, res) => {
 });
 
 /***
- * Updates user's favorites
+ * Adds user's favorites
  */
 router.post("/:u_id/favorites", async (req, res) => {
 	const userID = req.params.u_id;
@@ -93,7 +93,21 @@ router.post("/:u_id/favorites", async (req, res) => {
 });
 
 /***
- * Updates user's reservations
+ * Removes user's favorites
+ */
+router.delete("/:u_id/favorites", async (req, res) => {
+	const userID = req.params.u_id;
+	const ref = users.doc(userID);
+	const body: RoomIDType = req.body;
+	const removeFavorites = await ref.update({
+		my_favorites: FieldValue.arrayRemove(body)
+	})
+
+	res.send(removeFavorites)
+});
+
+/***
+ * Adds user's reservations
  */
  router.post("/:u_id/reservations", async (req, res) => {
 	const userID = req.params.u_id;
@@ -102,7 +116,8 @@ router.post("/:u_id/favorites", async (req, res) => {
 		u_id: userID,
 		r_id: req.body.r_id,
 		start: req.body.start,
-		end: req.body.end
+		end: req.body.end,
+		reservation_id: req.body.reservation_id
 	};
 	const unionFavorites = await ref.update({
 		my_reservations: FieldValue.arrayUnion(body)
@@ -110,6 +125,21 @@ router.post("/:u_id/favorites", async (req, res) => {
 
 	res.send(unionFavorites)
 });
+
+/***
+ * Removes user's reservations
+ */
+ router.delete("/:u_id/reservations", async (req, res) => {
+	const userID = req.params.u_id;
+	const ref = users.doc(userID);
+	const body: ReservationType = req.body;
+	const removeReservations = await ref.update({
+		my_reservations: FieldValue.arrayRemove(body)
+	})
+
+	res.send(removeReservations)
+});
+
 
 /***
  * Removes a user by their ID

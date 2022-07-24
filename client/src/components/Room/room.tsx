@@ -40,7 +40,7 @@ const Room = () => {
   return (
     <div className="room">
       <div className="room_left">
-        <H2>{buildingData['short']} {roomData['room_number']}</H2>
+        <H2>{buildingData['short']} {roomData['room_number']} <Favorites r_id = {roomData["r_id"]} b_id = {roomData["b_id"]}/></H2>
         <P4>{buildingData['location']} | {buildingData['name']}</P4>
         <img className="image" src={roomData['imageURL']} />
         <div className="attributes">
@@ -66,7 +66,6 @@ const Room = () => {
         <P7>RESERVATIONS HAVE PRIORITY. If you are using a space and do not have a valid reservation,<br></br>you must leave when asked by a group that has a valid reservation.</P7>
       </div>
       <Summary building={buildingData['short']} room={roomData['room_number']} />
-      <Favorites user = {"KuwRJ6GMZPZXCVota3v6UCZVxCE3"} r_id = {roomData["r_id"]} b_id = {roomData["b_id"]}/>
     </div>
   );
 }

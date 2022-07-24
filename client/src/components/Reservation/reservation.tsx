@@ -4,6 +4,7 @@ import Modal from './Dropdown/dropdown';
 import Calendar from 'react-calendar';
 import { P1, P2, P5 } from '../../styles/fonts.style';
 import { TextField } from '@mui/material';
+import BuildingSearch from '../BuildingSearch/BuildingSearch';
 
 const Reservation = () => {
 
@@ -114,6 +115,7 @@ const Reservation = () => {
       <div className="selectionPanel-submit" onClick={handleSubmit}>
         <P2 className="selectionPanel-text">Done</P2>
       </div>
+      <BuildingSearch/>
     </div>
   );
 }

@@ -1,8 +1,56 @@
 .dashboard {
-  height: 100vh;
-  width: 100vw;
+  /* Auto layout */
+
   display: flex;
-  position: relative;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+
+  position: absolute;
+  width: 326px;
+  height: 1162px;
+  left: 87px;
+  top: 189px;
+  height: 100vh;
+}
+
+.heading-1 {
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+
+  width: 307px;
+  height: 162px;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.favorited-rooms {
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+
+  width: 326px;
+  height: 984px;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 }
