@@ -1,7 +1,6 @@
 import './filter.css'
 import { P2, P3 } from '../../styles/fonts.style';
 import { FormControlLabel, Checkbox } from '@mui/material'
-import {  } from '@mui/material/colors'
 
 const amenities = ["TV", "Whiteboard", "Power Outlet", "Wheelchair Accessible"]
 
