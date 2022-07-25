@@ -2,6 +2,7 @@ import './roomgrid.css';
 import { Grid } from '@mui/material';
 import RoomCard from '../RoomCard/roomcard';
 import { useEffect, useState } from 'react';
+import Filter from '../Filter/filter';
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
@@ -14,14 +15,16 @@ const RoomGrid = () => {
         setData(data);
     }
 
-    useEffect(() => {
-        retrieveRooms();
-    }, []);
+    // useEffect(() => {
+    //     retrieveRooms();
+    // }, []);
 
     return (
         <div className='RoomGrid'>
             <div className="grid-content">
-                <div className="filter-panel">Filter Panel</div>
+                <div className="filter-panel">
+                    <Filter />
+                </div>
                 <div className="grid">
                     {/* <Grid container columns={9}>
                         {data.map((item) => (

@@ -1,0 +1,13 @@
+.filter{
+    width: 150px;
+}
+
+.amenities_text{
+    color: #A1A1A1
+}
+
+.reset_button{
+    color: #65C6AF;
+    background-color: white;
+    border: none;
+}
