@@ -1,6 +1,7 @@
 import './filter.css'
 import { P2, P3 } from '../../styles/fonts.style';
 import { FormControlLabel, Checkbox } from '@mui/material'
+import {  } from '@mui/material/colors'
 
 const amenities = ["TV", "Whiteboard", "Power Outlet", "Wheelchair Accessible"]
 
@@ -43,7 +44,8 @@ const Filter = () => {
             <div className='amenities_options'>
                 <div>
                     {amenities.map((val) => {
-                    return <FormControlLabel control={<Checkbox id={val}/>} label={val} onChange={(e) => {handleChange(e)}} />
+                    return <FormControlLabel control={<Checkbox id={val} sx={{'&.Mui-checked': {color: '#ffc38b'}}}/>}
+                    label={val} onChange={(e) => {handleChange(e)}} />
                     })}
                 </div>
             </div>
