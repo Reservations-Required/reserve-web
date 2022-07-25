@@ -2,7 +2,7 @@
     width: 150px;
 }
 
-.amenities_text{
+.amenities_text, .people_text{
     color: #A1A1A1
 }
 
@@ -10,4 +10,5 @@
     color: #65C6AF;
     background-color: white;
     border: none;
+    cursor: pointer;
 }
