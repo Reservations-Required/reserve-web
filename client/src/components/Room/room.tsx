@@ -27,7 +27,7 @@ const Room = () => {
     const roomData = await res.json()
     setRoomData(roomData);
   }
-  useEffect(() => { getRoom() }, [])
+  // useEffect(() => { getRoom() }, [])
 
   const [buildingData, setBuildingData] = useState<any>({});
   async function getBuilding() {
@@ -35,7 +35,7 @@ const Room = () => {
     const buildingData = await res.json()
     setBuildingData(buildingData)
   }
-  useEffect(() => { getBuilding() })
+  // useEffect(() => { getBuilding() })
 
   return (
     <div className="room">
